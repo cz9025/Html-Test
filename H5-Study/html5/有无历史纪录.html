@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../jQuery/js/jquery-1.11.1.js"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+			}
+			body{
+			}
+			.a-left{
+				float: left;
+				width: 100px;
+				height: 100%;
+			}
+			ul{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+				color: inherit;
+			}
+			.a-left ul li{
+				line-height: 50px;
+				cursor: pointer;
+			}
+			.a-left ul li.current{
+				color: blue;
+				background-color: darkgray
+			}
+			.d-right{
+				height: 100%;
+				padding-left: 100px;
+			}
+			#content{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			#one{
+				width: 100%;
+				height: 100%;
+				background-color: pink;
+			}
+			#two{
+				width: 100%;
+				height: 100%;
+				background-color: blue;
+			}
+			#three{
+				width: 100%;
+				height: 100%;
+				background-color: orange;
+			}
+			#four{
+				width: 100%;
+				height: 100%;
+				background-color: greenyellow;
+			}
+			#five{
+				width: 100%;
+				height: 100%;
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a-left" id="a-left">
+			<ul>
+				<li>第011个标签</li>
+				<li>第012个标签</li>
+				<li>第013个标签</li>
+				<li><a href="#two">第02个标签</a></li>
+				<li><a href="#three">第03个标签</a></li>
+				<li><a href="#four">第04个标签</a></li>
+				<li><a href="#five">第05个标签</a></li>
+			</ul>
+		</div>
+		<div class="d-right">
+			<div id="content">
+				<div id="one"></div>
+				<div id="two"></div>
+				<div id="three"></div>
+				<div id="four"></div>
+				<div id="five"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$("#a-left>ul>li").on("click",function(){
+				$(this).addClass("current").siblings().removeClass("current");
+				
+				
+				 var title=$("#a-left>ul>li").eq($(this).index()).text();
+				if(window.history&&history.pushState){
+					//添加历史记录
+					history.pushState(title,"12345",title);
+				}else{
+					console.log("NG");
+				}
+			});
+			
+			window.addEventListener("popstate",function(i){
+				console.log(i.state);
+			})
+		});
+	</script>
+</html>

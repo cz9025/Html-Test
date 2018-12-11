@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>放大镜4</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 350px;
+				height: 350px;
+				border: 1px solid gray;
+				position: relative;
+				margin: 100px;
+			}
+			.small{
+				width: 350px;
+				height: 350px;
+				position: relative;
+			}
+			.small .mask{
+				width: 100px;
+				height: 100px;
+				background: rgba(99,99,99,0.5);
+				position: absolute;
+				top: 0;
+				left: 0;
+				cursor: move;
+				display: none;
+			}
+			.box .big{
+				width: 450px;
+				height: 450px;
+				border: 1px solid gray;
+				position: relative;
+				position: absolute;
+				top: 0;
+				left: 360px;
+				overflow: hidden;
+				display: none;
+			}
+			.box .big img{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="small">
+				<img src="../网页特效2/img/001.jpg"/>
+				<div class="mask"></div>
+			</div>
+			<div class="big">
+				<img src="img/0001.jpg"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById("box");
+		var small=box.children[0];
+		var mask=small.children[1];
+		var big=box.children[1];
+		var pic=big.children[0];
+		
+		var x=0,y=0;
+		
+		small.onmouseover=function(){
+			mask.style.display="block";
+			big.style.display="block";
+		}
+		small.onmouseout=function(){
+			mask.style.display="none";
+			big.style.display="none";
+		}
+		small.onmousemove=function(event){
+			x=event.pageX-this.offsetParent.offsetLeft-mask.offsetWidth/2;
+			y=event.pageY-this.offsetParent.offsetTop-mask.offsetHeight/2;
+			
+			mask.style.top=y+"px";
+			mask.style.left=x+"px";
+			
+			//然后大图按比率跟着动起来
+			pic.style.top=-pic.offsetHeight/small.offsetHeight*y+"px";
+			pic.style.left=-pic.offsetWidth/small.offsetWidth*x+"px";
+		}
+	</script>
+</html>

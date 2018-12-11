@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>第三天JS练习</title>
+	</head>
+
+	<body>
+		<!--第一个：找完全数，他的因子之和等于他本身
+			for(var i = 1; i <= 10000; i++) {
+				var sum = 0;
+				for(var j = 1; j < i; j++) {
+					if(i % j == 0) {
+						sum += j;
+					}
+				}
+				if(sum == i) {
+					console.log(i);
+				}
+			}
+		-->
+		<!--求3/2  4/3  5/4....102/100的和
+			var sum=0;
+			for(var i=3;i<102;i++){
+				sum+=i/(i-1);
+			}
+			console.log(sum);
+		-->
+		<script type="text/javascript">
+			mHello();
+			function mHello () {
+				console.log("hello");
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,56 @@
+.shortcut{
+	overflow: hidden;
+	background-color: #f1f1f1;
+	height: 30px;
+	line-height: 30px;
+}
+.shortcut .fl{
+	height: 100%;
+	float: left;
+	position: relative;
+	padding: 0 20px 0 10px;
+	cursor: pointer;
+}
+.shortcut .fl span{
+	display: inline-block;
+}
+.j{
+	width: 15px;
+	height: 7px;
+	overflow: hidden;
+	position: absolute;
+	top: 12px;
+	right: 3px;
+	font: 400 15px/3px "宋体";
+}
+
+.shortcut .fl:hover span.j{
+	font: 400 15px/15px "宋体";
+}
+.shortcut .fr{
+	float: right;
+}
+.shortcut .fr ul li{
+	float: left;
+	padding: 0 20px 0 10px;
+	border-right: 1px solid red;
+	position: relative;
+}
+.shortcut .fr ul li:hover .j{
+	font: 400 15px/15px "宋体";
+}
+.shortcut .fr ul li.tel-jd{
+	padding: 0 20px 0 25px;
+}
+.shortcut .fr ul li span.sj{
+	display: inline-block;
+	width: 15px;
+	height: 20px;
+	background: url(../img/sprite.png) no-repeat;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+.shortcut .fr ul li .regs{
+	color: #C81623;
+}

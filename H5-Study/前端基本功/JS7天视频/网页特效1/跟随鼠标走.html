@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				display: block;
+				width: 88px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/img.jpg" id="pic"/>
+		<script type="text/javascript">
+			var pic=document.getElementById("pic");
+			var leaderX=0,leaderY=0,targetX=0,targetY=0;
+			document.onclick=function(event){
+				var event=event||window.event;
+				targetX=event.clientX-pic.offsetWidth/2;
+				targetY=event.clientY-pic.offsetHeight/2;
+			}
+			setInterval(function(){
+				leaderX=leaderX+(targetX-leaderX)/10;
+				leaderY=leaderY+(targetY-leaderY)/10;
+				pic.style.top=leaderY+"px";
+				pic.style.left=leaderX+"px";
+				
+			},10)
+		</script>
+	</body>
+</html>

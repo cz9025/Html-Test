@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>拖动盒子</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#nav{
+				height: 30px;
+				line-height: 30px;
+				background-color: blueviolet;
+				position: relative;
+				cursor: pointer;
+			}
+			#box{
+				width: 400px;
+				height: 400px;
+				border: 1px solid gray;
+				
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -180px;
+				margin-left: -200px;
+				z-index: 999;
+				display: none;
+				/*overflow-x: scroll;*/
+			}
+			#header{
+				height: 40px;
+				background-color: skyblue;
+				cursor: move;
+			}
+			#con{
+				height: 360px;
+				background-color: pink;
+				
+			}
+			#meng{
+				width: 100%;
+				height: 1000px;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 998;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			点我弹出对话框
+		</div>
+		
+		<div id="box">
+			<div id="header"></div>
+			<div id="con"></div>
+		</div>
+		<div id="meng"></div>
+		<script type="text/javascript">
+			var nav=document.getElementById("nav");
+			var box=document.getElementById("box");
+			var header=document.getElementById("header");
+			var meng=document.getElementById("meng");
+			
+			var x=0,y=0;
+			var lex=0,ley=0;
+			nav.onclick=function(){
+				box.style.display="block";
+				meng.style.display="block";
+			}
+			header.onmousedown=function(){
+				//先记录当前按下的位置
+				x=event.clientX-box.offsetLeft-200;
+				y=event.clientY-box.offsetTop-180;
+				document.onmousemove=function(event){
+					lex=event.clientX-x;
+					ley=event.clientY-y;
+					console.log(lex);
+					if(lex<=200){
+						lex=200;
+					}
+					if(ley<=180){
+						ley=180;
+					}
+					//然后用现在的位置减去按下的位置,那么就是移动的距离
+					box.style.left=lex+"px";
+					box.style.top=ley+"px";
+					window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+				}
+				
+				
+				document.onmouseup=function(){
+					document.onmousemove=null;
+				}
+			}
+		</script>
+	</body>
+</html>

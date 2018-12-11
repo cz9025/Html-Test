@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>I have so money 001</li>
+			<li>I have so money 002</li>
+			<li>I have so money 003</li>
+			<li>I have so money 004</li>
+			<li>I have so money 005</li>
+			<li>I have so money 006</li>
+			<li>I have so money 007</li>
+			<li>I have so money 008</li>
+			<li>I have so money 009</li>
+			<li>I have so money 010</li>
+		</ul>
+		<ul>
+			<li>I have so money 001</li>
+			<li>I have so money 002</li>
+			<li>I have so money 003</li>
+			<li>I have so money 004</li>
+			<li>I have so money 005</li>
+			<li>I have so money 006</li>
+			<li>I have so money 007</li>
+			<li>I have so money 008</li>
+			<li>I have so money 009</li>
+			<li>I have so money 010</li>
+		</ul>
+		
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//只会选中第一个ul中的第一个li
+			$("ul li:first").css("color","blue");
+			//会选中所有符合要求的
+			$("ul li:nth-child(2)").css("color","blue");
+		})
+	</script>
+</html>

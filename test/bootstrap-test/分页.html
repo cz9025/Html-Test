@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例 - 分页的大小</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		
+	</style>
+</head>
+<body>
+	<!--待完成-->
+<!--&laquo;&raquo;-->
+<ul class="pagination pagination-lg">
+	<li><a href="#">首页</a></li>
+	<li><a href="#">上一页</a></li>
+	<li><a href="#">1</a></li>
+	<li><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#">下一页</a></li>
+	<li><a href="#">尾页</a></li>
+</ul>
+
+<span class="label label-danger">呵呵</span>
+<button type="button" class="btn btn-default">
+<span class="badge pull-right">21</span>
+	好好的
+</button>
+
+<ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
+	<li class="active">
+		<a href="#">
+			<span class="badge pull-right">42</span>
+			首页
+		</a>
+	</li>
+	<li><a href="#">简介</a></li>
+	<li>
+		<a href="#">
+			<span class="badge pull-right">3</span>
+			消息
+		</a>
+	</li>
+</ul>
+
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("ul li").each(function(i,e){
+			
+			$(e).click(function(){
+				console.log(e)
+				$(this).css({"class":"active"})
+			})
+		})
+		
+		
+	})
+</script>
+</html>

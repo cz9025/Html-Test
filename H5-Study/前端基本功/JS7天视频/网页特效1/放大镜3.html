@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>放大镜3</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 350px;
+				height: 350px;
+				margin: 100px;
+				border: 1px solid gray;
+				position: relative;
+			}
+			.small{
+				width: 350px;
+				height: 350px;
+				position: relative;
+			}
+			.big{
+				width: 450px;
+				height: 450px;
+				border: 1px solid gray;
+				position: absolute;
+				top: 0;
+				left: 360px;
+				overflow: hidden;
+				display: none;
+			}
+			.big img{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.mask{
+				width: 100px;
+				height: 100px;
+				background:rgba(99,99,99,0.5);
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+				cursor: move;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="small">
+				<img src="img/001.jpg"/>
+				<div class="mask"></div>
+			</div>
+			<div class="big">
+				<img src="img/0001.jpg"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById("box");
+		var small=box.children[0];
+		var mask=small.children[1];
+		var big=box.children[1];
+		var pic=big.children[0];
+		
+		//鼠标移到盒子处显示出大图
+		small.onmouseover=function(){
+			mask.style.display="block";
+			big.style.display="block";
+		}
+		small.onmouseout=function(){
+			mask.style.display="none";
+			big.style.display="none";
+		}
+		
+		//小盒子要跟随鼠标走
+		var x=0,y=0;
+		small.onmousemove=function(event){
+			x=event.clientX-this.offsetParent.offsetLeft-mask.offsetWidth/2;
+			y=event.clientY-this.offsetParent.offsetTop-mask.offsetHeight/2;
+				console.log(this.offsetParent.offsetLeft);
+			//限制小盒子活动范围
+			if(x<=0){
+				x=0;
+			}
+			if(y<=0){
+				y=0;
+			}
+			if(x>=this.offsetWidth-mask.offsetWidth){
+				x=this.offsetWidth-mask.offsetWidth;
+			}
+			if(y>=this.offsetHeight-mask.offsetHeight){
+				y=this.offsetHeight-mask.offsetHeight;
+			}
+			mask.style.top=y+"px";
+			mask.style.left=x+"px";
+			//让大图也动起来
+			//要是写图片的宽做比率,更精确
+			pic.style.left=-big.offsetWidth/small.offsetWidth*x+"px"; 
+			pic.style.top=-big.offsetHeight/small.offsetHeight*y+"px";
+		}
+	</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				margin-top: 50px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button id="btn1">btn1</button>
+		<button id="btn2">btn2</button>
+		<div id="box"></div>
+
+		<script type="text/javascript">
+			var btn1 = document.getElementById("btn1");
+			var btn2 = document.getElementById("btn2");
+			var box = document.getElementById("box");
+
+			var timer = 0;
+			btn1.onclick = function() {
+				runBox(box,201,5);
+
+			}
+			btn2.onclick = function() {
+				runBox(box,400,6);
+
+			}
+
+			//参数1:运动的盒子;	参数2:目标距离;	参数3:运动速度
+			function runBox(obj, target,speed) {
+				clearInterval(timer);
+				var spd=obj.offsetLeft < target?speed:-speed;
+				timer = setInterval(function() {
+					var le = obj.offsetLeft;
+					var result=Math.abs(target-obj.offsetLeft);
+					//如果目标距离和左边距的差值大于运动距离,则继续运动,否则停止
+					if(result>speed){
+						
+						
+						obj.style.left=le+spd+"px";
+//						if(le > target) {
+//							//左移
+//							obj.style.left=le-speed+"px";
+//	
+//						} 
+//						if(le < target) {
+//							//右移
+//							obj.style.left=le+speed+"px";
+//						}
+					}else{
+						clearInterval(timer);
+						obj.style.left=target+"px";
+					}
+					console.log(obj.offsetLeft);
+				}, 30)
+
+			}
+		</script>
+	</body>
+
+</html>

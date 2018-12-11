@@ -1,0 +1,131 @@
+.header0{
+	width: 100%;
+	height: 52px;
+	background: url(../img/cityunion_header_bg.gif) repeat-x;
+	position: relative;
+}
+
+.header_logo{
+	/*float: left;*/
+	
+}
+.userArea{
+	/*float: right;*/
+	width: 360px;
+	height: 31px;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+
+}
+.userl{
+	background: url(../img/cityunion_header_infol.gif) no-repeat;
+	width: 37px;
+	height: 31px;
+	float: left;
+}
+
+.userr{
+	background: url(../img/cityunion_header_infor.gif) no-repeat;
+	width: 37px;
+	height: 31px;
+	float: right;	
+}
+.userInfo{
+	float: left;
+	background: url(../img/cityunion_header_infom.gif) repeat-x;
+	width: 286px;
+	height: 31px;
+	color: white;
+	text-align: right;
+	font-size: 12px;
+	line-height: 30px;
+	
+}
+.userInfo img{
+	/*padding-left: 5px;*/
+	vertical-align: middle;
+}
+.userInfo a{
+	text-decoration: none;
+	color: white;
+	padding: 0 10px;
+	line-height: 30px;
+}
+/*==================*/
+.content{
+	overflow: hidden;
+	display:flex;
+}
+
+/*左侧*/
+#left{
+	float: left;
+	display: inline-block;
+	width: 192px;
+	height: 100%;
+	
+}
+
+.fold{
+	
+	color: #6182bc;
+	border-bottom: solid 1px #afcfdd;
+	font-size: 12px;
+	cursor: pointer;
+	text-align: right;
+	background: url(../img/menu_fold_bg.gif) repeat-x;
+	padding: 6px;
+}
+.fold img{
+	vertical-align: middle;
+}
+#left_menu{
+	background-color: #e6f4fa;
+}
+#left_menu .bar{
+	border-bottom: solid 1px #cfe6f0;
+}
+
+#left_menu div{
+	display: none;
+}
+
+
+.bar:hover .fon{
+	color: cornflowerblue;
+}
+.bar .arror{
+	float: right;
+}
+
+.bar img{
+	margin: 13px 8px 0px 0px;
+	float: left;
+}
+
+.tag{
+	display: none;
+	width: 19px;
+	
+	background: #cfe6f0;
+}
+.tag img{
+	border-bottom: solid 1px #cfe6f0;
+}
+.tag div{
+	height: 100%;
+}
+
+
+.right{
+	/*float: left;*/
+	/*margin-left: 192px;*/
+	width: 100%;
+	height: 800px;
+	background-color: pink;
+
+}
+
+
+/*display:flex;*/

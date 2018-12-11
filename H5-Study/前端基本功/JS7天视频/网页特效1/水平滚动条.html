@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 300px;
+				height: 15px;
+				background-color: gray;
+				position: relative;
+				margin:100px auto;
+			}
+			.box .row{
+				width: 15px;
+				height: 35px;
+				background-color: pink;
+				position: absolute;
+				top: -10px;
+				left: 0;
+				cursor: pointer;
+			}
+			.box .bian{
+				/*width: 300px;*/
+				height: 15px;
+				background-color: pink;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			
+			<div class="row"></div>
+			<div class="bian" id="bian"></div>
+		</div>
+		<span id="num">
+			
+		</span>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById("box");
+		var row=box.children[0];
+		var num=document.getElementById("num");
+		var bian=document.getElementById("bian");
+		var x=0;
+		row.onmousedown=function(event){
+			document.onmousemove=function(event){
+				//这样不对,因为鼠标点击到盒子上时,不可能是刚好点击在盒子的最左边
+				//那么这样滑动就不对了,,,,会跳一下
+				x=event.clientX-box.offsetLeft;
+				if(x<0){
+					x=0;
+				}
+				if(x>box.offsetWidth-row.offsetWidth){
+					x=box.offsetWidth-row.offsetWidth;
+				}
+				row.style.left=x+"px";
+				console.log(row.offsetLeft);
+				num.innerHTML=row.offsetLeft/(box.offsetWidth-row.offsetWidth)+"a1111a"+row.offsetLeft;
+				bian.style.width=row.offsetLeft+"px";
+				
+				window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+				
+			}
+			document.onmouseup=function(){
+				document.onmousemove=null;
+			}
+		}
+		
+	</script>
+</html>

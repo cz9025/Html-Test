@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 1000px;
+				height: 400px;
+				border: 1px solid pink;
+				overflow: hidden;
+				margin: 100px auto;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				float: left;
+				width: 200px;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--右侧有时会跳为空白-->
+		<div class="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$(".box ul li").each(function(number,element){
+				$(this).css({
+					"background":"url(img/"+(number+1)+".jpg)"
+					}
+				);
+			}).mouseenter(function(){
+//				console.log($(this));
+//				$(this).css("width","600px").siblings().css("width","100px");
+				$(this).stop().animate({width:600},500).siblings("li").stop().animate({width:100},500);
+			}).mouseleave(function(){
+				$(".box ul li").stop().animate({width:200},500);
+				
+			})
+		})
+	</script>
+</html>

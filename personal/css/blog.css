@@ -1,0 +1,16 @@
+.blog{
+	margin-top: 20px;
+}
+.blog li{
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	
+}
+.blog li a{
+	border-bottom: deepskyblue solid 1px;
+}
+.blog li a:hover{
+	color: deepskyblue;
+}

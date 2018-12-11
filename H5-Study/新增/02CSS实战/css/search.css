@@ -1,0 +1,193 @@
+.w .logo{
+	float: left;
+	width: 360px;
+	height: 75px;
+	position: relative;
+	padding-top: 25px;
+}
+.w .logo .lg{
+	display: inline-block;
+	width: 270px;
+	height: 60px;
+	background: url(../img/logo.png) no-repeat;
+	float: left;
+}
+.w .logo .dong{
+	display: inline-block;
+	width: 180px;
+	height: 80px;
+	background: url(../img/dong.gif) no-repeat;
+	float: left;
+	position: absolute;
+	top: 10px;
+	left: 160px;
+}
+
+.w .search{
+	height: 75px;
+	float: left;
+	padding-top: 25px;
+}
+.search .search_txt{
+	width: 450px;
+	height: 32px;
+	border: 2px solid #B61D1D;
+	line-height: 35px;
+	padding-left: 5px;
+	font-size: 14px;
+}
+.search .ss{
+	height: 36px;
+	width: 80px;
+	background-color: #B61D1D;
+	font: 16px/36px "microsoft yahei";
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.search .nav{
+	padding: 7px 0;
+}
+.search .nav li{
+	float: left;
+	margin-right: 8px;
+}
+.search .nav li a{
+	
+}
+
+.w .gcar{
+	float: right;
+	width: 96px;
+	height: 34px;
+	padding-left: 43px;
+	margin: 25px 65px 0 0;
+	border: 1px solid #DFDFDF;
+	position: relative;
+	line-height: 34px;
+	
+}
+
+.gcar .ico{
+	display: inline-block;
+	width: 16px;
+	height: 13px;
+	background: url(../img/sprite.png) no-repeat -1px -59px;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+.gcar .ico-num{
+	display: inline-block;
+	width: 16px;
+	height: 14px;
+	border-radius: 7px 7px 7px 0;
+	background-color: #C81623;
+	position: absolute;
+	top: -4px;
+	text-align: center;
+	color: white;
+	line-height: 14px;
+}
+.gcar .goto{
+	font: 400 13px/13px simsun;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+
+.jd-nav{
+	height: 44px;
+	border-bottom: 2px solid #B1191A;
+}
+.jd-nav .zuo{
+	float: left;
+	width: 210px;
+	height: 44px;
+	line-height: 44px;
+	position: relative;
+	z-index: 10;
+	background-color: pink;
+}
+.jd-nav .zuo .z-top{
+	height: 44px;
+	font: 400 15px/44px "microsoft yahei";
+	padding-left: 10px;
+	background-color: #B1191A;
+	color: #FFFFFF;
+}
+.jd-nav .zuo .z-bottom{
+	margin-top: 2px;
+	height: 465px;
+	background-color: #C81623;
+}
+.jd-nav .zuo .z-bottom ul{
+	padding: 0 10px;
+	width: 190px;
+}
+.jd-nav .zuo .z-bottom ul li{
+	width: 100%;
+	height: 31px;
+	line-height: 31px;
+	font-size: 15px;
+	
+	overflow: hidden;
+}
+.jd-nav .zuo .z-bottom ul li h3{
+	display: block;
+	float: left;
+	font-weight: normal;
+	color: #FFFFFF;
+	font-size: 15px;
+}
+.jd-nav .zuo .z-bottom ul li .dy{
+	float: right;
+	font-weight: 600;
+	color: #FFFFFF;
+	font-size: 15px;
+	font-family: simsun;
+}
+.jd-nav .zhong ul li{
+	padding: 0 20px;
+	line-height: 44px;
+	font: 400 15px/44px "microsoft yahei";
+	color: #333;
+}
+.jd-nav  .you{
+	float: right;
+	width: 140px;
+	height: 44px;
+}
+
+
+.new{
+	background: url(../img/new.jpg) no-repeat top right;
+}
+
+/*多快好省*/
+.slogen{
+	background-color: #f5f5f5;
+	padding: 20px 0;
+	height: 54px;
+	margin-bottom: 15px;
+}
+.slogen  span{
+	display: inline-block;
+	width: 302px;
+	height: 54px;
+	float: left;
+}
+.slogen .duo{
+	
+	background: url(../img/slogen1.png) no-repeat;
+}
+.slogen .kuai{
+	background: url(../img/slogen2.png) no-repeat;
+}
+.slogen .hao{
+	background: url(../img/slogen3.png) no-repeat;
+}
+.slogen .sheng{
+	background: url(../img/slogen4.png) no-repeat;
+}

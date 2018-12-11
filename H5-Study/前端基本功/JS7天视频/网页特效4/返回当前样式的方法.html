@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>返回当前样式的方法</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 10px;
+				left: 20px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box" style="width: 100px;"></div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			
+			console.log(box.style.width);//只能得到行内的
+			console.log(box.style["width"]);//只能得到行内的
+			console.log(window.getComputedStyle(box,null).width);//常规浏览器
+//			console.log(box.currentStyle["width"]);//只能再IE下
+		</script>
+	</body>
+</html>

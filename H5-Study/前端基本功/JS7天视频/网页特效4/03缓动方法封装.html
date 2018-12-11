@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>缓动方法封装</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				top: 50px;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">跟我走起</button>
+		
+		<button id="btn2">跟我走起2</button>
+		<div id="box"></div>
+		<script type="text/javascript">
+			var btn=document.getElementById("btn");
+			var btn2=document.getElementById("btn2");
+			var box=document.getElementById("box");
+			
+			btn.onclick=function(){
+				animate(box,200);
+			}
+			btn2.onclick=function(){
+				animate(box,400);
+			}
+			
+			var timer=null; //对象行的变量给null
+			function animate(obj,target){
+				
+				
+				clearInterval(obj.timer);
+				
+				obj.timer=setInterval(function(){
+					//数字越小,越细腻
+					var step=(target-obj.offsetLeft)/10; 
+					step=step>0?Math.ceil(step):Math.floor(step);
+					obj.style.left=obj.offsetLeft+step+"px";
+					if(step==0){
+						clearInterval(obj.timer);
+					}
+				},30)
+			}
+		</script>
+	</body>
+</html>

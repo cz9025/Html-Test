@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<title>回调关闭窗口</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 322px;
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				
+			}
+			
+			.box .close-btn{
+				
+				position: absolute;
+	            top:0;
+	            right:0;
+	            width:30px;
+	            height: 20px;
+	            cursor: pointer;
+			}
+		
+			
+		</style>
+	</head>
+	<body>
+		<!--上下两个盒子,点击上面盒子的那个关闭,先隐藏下面那个盒子(高度变为0),再隐藏上面那个盒子(宽度变为0 )-->
+		<div class="box" id="box">
+			<span class="close-btn" id="close_btn"></span>
+			<div >
+				<img src="img/t.jpg"/>
+			</div>
+			
+			
+			<div class="two" id="two">
+				<img src="img/b.jpg"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$("#close_btn").click(function(){
+				$("#two").slideUp("slow",function(){
+					$("#box").animate({
+						"width":0
+					},1000);
+				})
+			})
+		})
+	</script>
+</html>

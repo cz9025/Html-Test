@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <!--<meta http-equiv="Refresh" content="5;url=http://www.w3school.com.cn"/>-->
+    <title>Title</title>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	.a{
+    		width: 300px;
+    		height: 500px;
+    		margin: 0 auto;
+    	}
+    	ul{
+    		list-style: none;
+    	}
+    	ul li{
+    		height:20px;
+    		line-height: 20px;
+    		background: url(css/img/bg.png) no-repeat 5px center;
+    		padding-left: 25px;
+    	}
+    	.dw{
+    		width: 300px;
+    		height: 300px;
+    		background-color: pink;
+    		position: relative;
+    	}
+    	span{
+    		position: absolute;
+    		width: 100px;
+    		height: 200px;
+    	}
+    	.sj{
+    		width: 0px;
+    		height: 0px;
+    		border-left:solid white 20px;
+    		border-bottom:solid white 20px;
+    		border-top:solid blue 20px;
+    		border-right:solid white 20px;
+    	}
+    	img{
+    		vertical-align: middle;
+    	}
+    </style>
+</head>
+<body>
+<p>
+    对不起。我们已经搬家了。您的 URL 是 <a href="http://www.w3school.com.cn">http://www.w3school.com.cn</a>
+</p>
+
+<pre>
+
+<p>1．	现在有一个字符串“1234567890abcdef”使用substr()方法取出其中的“0”和“e”之间的字符并在网页上输出。
+
+2．	现在有一个字符串“1234567890abcdef”使用substring()方法取出其中的“0”和“e”之间的字符并在网页上输出。
+
+3．	现在有一个字符串“1234567890abcdef”，将其拆分成字符并在网页上输出。
+
+4．	在网页中分别输出现在的年，月，日，星期，小时，分钟，秒？
+
+5．	现在有一个数组[20,12,111,34,278,19,45],对此数组按数字升序排序，然后在网页上输出排序后的值。</p>
+</pre>
+<span id="txt">
+	
+</span>
+<script type="text/javascript">
+	var txt=document.getElementById("txt");
+	var str="1234567890abcdef";
+	for (var i=0;i<str.split("").length;i++) {
+		txt.innerHTML+=i+"=";
+	}
+	var arr=[20,12,111,34,278,19,45];
+	txt.innerHTML+=arr.sort(function(a,b){
+		if(a>b){
+			return 1;
+		}else{
+			return -1;
+		}
+	})
+	
+	
+</script>
+
+<br /><br /><br />
+<div>分界线</div>
+<div class="a">
+	<p>这里是标题</p>
+	<ul>
+		<li>很多1</li>
+		<li>很多2</li>
+		<li>很多3</li>
+		<li>很多4</li>
+		<li>很多5</li>
+	</ul>
+</div>
+
+<div class="dw">
+	<span>我是快吗</span>
+</div>
+
+<div class="sj"></div>
+
+<div class="pc">
+	<img src="ajax/js/jQueryUI/images/ui-bg_gloss-wave_35_f6a828_500x100.png"/>哈哈哈的打大法师
+</div>
+</body>
+</html>
+

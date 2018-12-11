@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>放大镜</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 350px;
+				height: 354px;
+				border: 1px solid gray;
+				position: relative;
+				margin: 50px 100px;
+			}
+			#small{
+				position: relative;
+			}
+			#mask{
+				width: 100px;
+				height: 100px;
+				background: rgba(255, 255, 0, 0.4);
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+				cursor: move;
+			}
+			#big{
+				width: 450px;
+				height: 450px;
+				border: 1px solid gray;
+				position: absolute;
+				top: 0;
+				left: 360px;
+				overflow: hidden;
+				display: none;
+			}
+			#big img{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="small">
+				<img src="img/001.jpg"/>
+				<!--黄色块-->
+				<div id="mask"></div>
+			</div>
+			<div id="big">
+				<img src="img/0001.jpg"/>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var mask=document.getElementById("mask");
+			var big=document.getElementById("big");
+			var small=document.getElementById("small");
+			var bigimg=big.children[0];
+			
+			small.onmouseover=function(){
+				mask.style.display="block";
+				big.style.display="block";
+			}
+			small.onmouseout=function(){
+				mask.style.display="none";
+				big.style.display="none";
+			}
+			var x=0,y=0;
+			small.onmousemove=function(event){
+				x=event.clientX-this.offsetParent.offsetLeft-mask.offsetWidth/2;
+				y=event.clientY-this.offsetParent.offsetTop-mask.offsetHeight/2;
+				if(x<0){
+					x=0;
+				}else if(x>small.offsetWidth-mask.offsetWidth){
+					x=small.offsetWidth-mask.offsetWidth;
+				}
+				if(y<0){
+					y=0;
+				}else if(y>small.offsetHeight-mask.offsetHeight){
+					y=small.offsetHeight-mask.offsetHeight;
+				}
+				mask.style.left=x+"px";
+				mask.style.top=y+"px";
+				
+				//移动大图片,,记得要把图片也弄成定位
+				bigimg.style.left=-x*450/350+"px";
+				bigimg.style.top=-y*450/354+"px";
+			}
+			
+		</script>
+	</body>
+</html>

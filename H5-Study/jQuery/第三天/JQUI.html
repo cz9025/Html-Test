@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../js/jQueryUI/jquery-ui.min.css">
+		<script src="../js/jquery-1.11.1.js"></script>
+		<script src="../js/jQueryUI/jquery-ui.min.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.warp {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.warp #b1 {
+				background-color: blue;
+			}
+			
+			.warp ul {
+				background-color: pink;
+			}
+			
+			.warp div {
+				height: 300px;
+				background-color: #ccc;
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(function() {
+				$(".warp").tabs();
+				//自己弄的
+				$("ul").removeClass("ui-widget-header");
+				
+				
+				$(".dialog").dialog();
+			})
+		</script>
+	</head>
+
+	<body>
+
+		<div class="warp">
+			<ul>
+				<li>
+					<a href="#b1">时尚</a>
+				</li>
+				<li>
+					<a href="#b2">时尚</a>
+				</li>
+				<li>
+					<a href="#b3">时尚</a>
+				</li>
+			</ul>
+			<div class="box1" id="b1">1</div>
+			<div class="box2" id="b2">2</div>
+			<div class="box3" id="b3">3</div>
+		</div>
+		
+		
+	<!-- dialog案例 -->
+	<div class="dialog" title="我是对话框的标题">
+		我是对话框
+	</div>
+	</body>
+
+</html>

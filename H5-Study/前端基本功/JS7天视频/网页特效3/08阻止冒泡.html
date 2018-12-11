@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		<button id="btn" type="button">贪贪贪</button>
+		</div>
+		<script type="text/javascript">
+			//如果不加任何处理则都会弹出对话框
+			var btn=document.getElementById("btn");
+			
+			btn.onclick=function(event){
+				alert("按钮弹出的");
+				event.stopPropagation();
+			}
+			document.onclick=function(){
+				alert("空白地方的");
+			}
+		</script>
+	</body>
+</html>

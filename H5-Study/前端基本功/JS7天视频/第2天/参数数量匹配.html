@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fun(a,b){
+				
+				console.log(fun.length);
+				console.log(arguments);
+				console.log(arguments.length);
+				if(fun.length==arguments.length){
+					console.log("两数之和为:"+a+b);
+				}else{
+					console.error("要求输入"+fun.length+"个参数,"+"实际输入"+arguments.length+"个参数。");
+				}
+			}
+			fun(1,2);
+			fun(1,2,3,4);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<p class="pp">这是p元素 里面的</p>
+		<div class="box">
+		
+		</div>
+		
+		<div class="txt"></div>
+		<input type="text" name="txt" id="txt"  />
+	</body>
+	<script type="text/javascript">
+		$(".box").append("<p>1</p>")
+		$(".box").before("<p>2</p>")
+		$(".box").prepend("<p>4</p>")
+		$("<p>3</p>").appendTo($(".box"))
+		$(".box").after("<p>5</p>")
+		$(".box").append($(".pp").clone())
+		console.log($(".pp").val()) //获取不到span的文本
+		console.log($(".pp").text())
+		$(".box").height(500)
+		.width(600)
+		.css("background","blue")
+		$(".txt").html($(".box").width()+"==="+$(".box").height())
+		
+		$("#txt").val("cz9025")
+	</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var xhr=new XMLHttpRequest();
+			
+			xhr.open("GET","params.php?username="+"cz"+"&password="+10000);
+			
+			xhr.send();
+			
+			xhr.onreadystatechange=function(){
+				if(this.readyState==4&&this.status==200){
+					console.log(xhr.responseText);
+				}
+			}
+		</script>
+	</body>
+</html>

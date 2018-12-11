@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,use-scable=no"/>
+		<meta charset="UTF-8">
+		<title>联系</title>
+
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.blue{
+				height: 500px;
+				background: gray;
+			}
+			.green{
+				height: 500px;
+				background: green;
+			}
+			.yellow{
+				height: 500px;
+				background: yellow;
+			}
+			.pink{
+				height: 500px;
+				background: pink;
+			}
+		</style>
+	</head>
+
+	<body style="background-color: #FFFFFF;" class="container-fluid">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+			            <span class="sr-only">切换导航</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+        			</button>
+					<a class="navbar-brand" href="#">cz9025的网站</a>
+				</div>
+				<div class="collapse navbar-collapse" id="example-navbar-collapse">
+					<ul class="nav navbar-nav bus">
+						<li class="active">
+							<a href="#">iOS</a>
+						</li>
+						<li>
+							<a href="#">SVN</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Java <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">jmeter</a>
+								</li>
+								<li>
+									<a href="#">EJB</a>
+								</li>
+								<li>
+									<a href="#">JasperReport</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#">分离的链接</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#">另一个分离的链接</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			
+			<div>
+				<script type="text/javascript">
+					$('.bus li').click(function(){
+						$(this).addClass('active').siblings().removeClass('active');
+						$('.container div').eq($(this).index()).css('display','block').siblings().css('display','none');
+					})
+				</script>
+					
+			</div>
+		</nav>
+		<div class="container">
+			<div class="blue" ></div>
+			<div class="green"style="display: none;"></div>
+			<div class="yellow" style="display: none;"></div>
+			<div class="pink" style="display: none;"></div>
+			
+			<!--<nav>
+				<a href="#">sdfsf</a>
+				<a href="#">sdfsf</a>
+				<a href="#">sdfsf</a>
+				<a href="#">sdfsf</a>
+				<a href="#">sdfsf</a>
+			</nav>-->
+		</div>
+		
+		<div style="height: 100px;">
+			
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-md-8" style="background: gray;height: 2px;">
+					
+				</div>
+				
+				<div class="col-xs-6 col-sm-6 col-md-8" style="background: pink;height: 2px;">
+					
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-8" style="background: blue;height: 2px;">
+					
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-8" style="background: red;height: 2px;">
+					
+				</div>
+				
+				<div class="col-md-8" style="background: green;height: 2px;">
+					<div class="row">
+						
+					
+						<div class="col-md-10 col-md-pull-10" style="background: yellow;height: 2px;"></div>
+						<div class="col-md-3 col-md-push-3" style="background: goldenrod;height: 2px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<p class="lead">sdfas撒<kbd>ctrl</kbd>旦法舒服谁的风格</p>
+	<p class="small">sdfas撒<b>撒旦法</b>旦法舒<mark>dfsg电饭锅</mark>服谁的风格</p>
+	<ul class="list-unstyled">
+		<li>fsdf </li>
+		<li>fsdf </li>
+		<li>fsdf </li>
+		<li>fsdf </li>
+	</ul>
+	
+	<ul class="list-inline">
+		<li>fsdf </li>
+		<li>fsdf </li>
+		<li>fsdf </li>
+		<li>fsdf </li>
+	</ul>
+	<div class="table-responsive">
+		
+
+	<table class="table table-bordered table-hover">
+		<tr><th>Header</th><th>Header</th><th>Header</th></tr>
+		<tbody>
+		<tr><td>Data</td><td>Data</td><td>Data</td></tr><tr><td>Data</td><td>Data</td><td>Data</td></tr>
+		<tr class="success"><td>Data</td><td>Data</td><td>Data</td></tr>
+		<tr><td>Data</td><td>Data</td><td>Data</td></tr></tbody>
+	</table>
+		</div>
+		
+	
+	<form role="form" class="form-horizontal">
+		<div class="form-group">
+			<label for="txt1" class="control-label col-sm-2">名稱：</label>
+			<div class="col-sm-6">
+				<input type="text" id="txt1" placeholder="請輸入隨意" class="form-control" />
+	  		</div>
+	
+		</div>
+							
+		<div class="form-group">
+			<label for="pwd" class="control-label col-sm-2">名稱：</label>
+			<div class="col-sm-6">
+				<input type="text" id="pwd" placeholder="請輸入隨意" class="form-control" />
+	  		</div>
+	
+		</div>
+	</form>
+	
+	<form action="111.html" method="post" class="form-horizontal">
+		<div class="form-group " id="names">
+			<label for="txt" class="control-label col-sm-2">用户名：</label>
+			<div class="col-sm-6 has-success has-feedback">
+				<input type="text" name="" id="txt" placeholder="请输入" class="form-control"/>
+				<span class="glyphicon glyphicon-ok form-control-feedback sr-only" id="ok"></span>
+			</div>
+			
+		</div>
+		
+		<input type="submit" value="提交吧"/>
+		
+		<script type="text/javascript">
+			$(function(){
+				$('#txt').blur(function(){
+
+					$("#ok").removeClass('sr-only');
+				});
+			})
+		</script>
+	</form>
+	
+
+<div class="container">
+	
+
+	<form class="form-inline pull-right">
+		<div class="form-group ">
+		
+			<input type="text" class="form-control pull-right" id="name" placeholder="请输入名称">
+		</div>
+	
+		<button type="submit" class="btn btn-success pull-right">提交</button>
+	</form>
+	
+	<select name="ha" class="form-control">
+		<option value="1">1</option>
+		<option value="1">1</option>
+		<option value="1">1</option>
+		<option value="1">1</option>
+		<option value="1">1</option>
+	</select>
+		<select multiple class="form-control">
+		<option value="1">1</option>
+		<option value="1">1</option>
+		<option value="1">1</option>
+		<option value="1">1</option>
+		<option value="1">1</option>
+	</select>
+</div>
+	
+	
+	
+	 <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+	 <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+	 <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+	 <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+	 <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+	
+	
+	</body>
+
+</html>

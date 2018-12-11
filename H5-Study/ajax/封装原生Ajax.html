@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="button" name="btn" id="btn" value="走起" /><label for="btn"></label>
+
+	</body>
+
+	<script type="text/javascript">
+		var btn = document.getElementById("btn");
+
+		btn.onclick = function() {
+			ajax({
+				data: "name=3",
+				url: "test.php",
+				type: "get",
+				dataType: "json",
+				success: function(d) {
+					console.log(d);
+				},
+				errors: function() {
+					console.log(2);
+				}
+			});
+		}
+
+		function ajax(data) {
+
+			var xhr = null;
+
+			var url = "";
+			if(window.XMLHttpRequest) {
+				xhr = new XMLHttpRequest();
+			} else {
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			var type = data.type == "get" ? "get" : "post";
+
+			if(type == "get") {
+				if(data.url) {
+					url = data.url + "?" + data.data;
+				}
+			}
+			xhr.open(type, url);
+
+			if(type == "get") {
+				xhr.send();
+			} else if(type == "post") {
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xhr.send(data.data);
+			}
+
+			xhr.onreadystatechange = function() {
+				if(this.readyState == 4) {
+					if(this.status == 200) {
+						var datatype = data.dataType == "json" ? xhr.responseText : xhr.responseXML;
+						data.success(datatype);
+					} else {
+						data.errors();
+					}
+				}
+			}
+		}
+	</script>
+
+</html>

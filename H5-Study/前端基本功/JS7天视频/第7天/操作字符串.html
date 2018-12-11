@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>操作字符串</title>
+		<script type="text/javascript">
+			
+			window.onload=function(){
+				function $(id){return document.getElementById(id);}
+				var txt=$("txt").innerHTML;
+				function getStr(id,txt){
+					$(id).onclick=function(){
+						this.nextElementSibling.innerHTML=txt;
+					}
+				}
+				getStr("bt1",txt.slice(3));
+				getStr("bt2",txt.slice(3,6));//从第三个开始数,到第六个截至
+				getStr("bt3",txt.slice(-1));
+				
+				getStr("bt4",txt.substr(3));
+				getStr("bt5",txt.substr(3,6));
+				//getStr("bt6",txt.substr(-1));//这个再IE678不兼容
+				getStr("bt6",txt.substr(txt.length-1,1));//取最后一个
+				getStr("bt7",txt.substring(6,3));//会自动把小的值作为起始位置
+			}
+		</script>
+	</head>
+	<body>
+		<div id="txt">my name is cz!</div>
+		<button id="bt1">slice(3)</button><span></span><br />
+		<button id="bt2">slice(3,6)</button><span></span><br />
+		<button id="bt3">slice(-1)</button><span></span><br />
+		
+		<button id="bt4">substr(3)</button><span></span><br />
+		<button id="bt5">substr(3,6)</button><span></span><br />
+		<button id="bt6">substr(-1)</button><span></span><br />
+		<button id="bt7">substr(6,3)</button><span></span><br />
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件对象</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.onclick=function(event){
+				console.log(event.clientX+"  "+event.clientY+" " + event.pageX+" "+event.pageY+" "+ event.screenX);
+			}
+			
+			var str="qwertyui";
+			console.log(str.slice(3,6));
+			console.log(str.substr(1,5))
+		</script>
+	</body>
+</html>

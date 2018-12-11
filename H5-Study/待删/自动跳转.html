@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span id="txt">
+			
+		</span>
+		<script type="text/javascript">
+			var count=5;
+			var txt=document.getElementById("txt");
+			setTimeout(fn,1000);
+			function fn(){
+				txt.innerHTML="页面还有"+count+"秒跳转";
+				count--;
+				
+				if(count<0){
+					window.location.href="http://www.baidu.com";
+				}else{
+					setTimeout(fn,1000);
+				}
+					
+				
+			}
+			
+			var str="erew";
+			console.log(str.charAt(1));
+			console.log(str.substring(3,1));
+		</script>
+	</body>
+</html>

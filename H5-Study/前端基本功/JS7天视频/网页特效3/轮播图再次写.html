@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>重做轮播图</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 500px;
+				height: 200px;
+				border: 1px solid gray;
+				position: relative;
+				overflow: hidden;
+				margin: 100px;
+			}
+			.box ul{
+				width: 1000%;
+				list-style: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.box ul li{
+				width: 500px;
+				height: 200px;
+				float: left;
+			}
+			.box ol{
+				list-style: none;
+				position: absolute;
+				bottom: 15px;
+				right: 20px;
+			}
+			.box ol li{
+				float: left;
+				margin-right: 15px;
+				width: 18px;
+				height: 18px;
+				line-height: 18px;
+				text-align: center;
+				background-color: blue;
+				color: #FFFFFF;
+				cursor: pointer;
+			}
+			.box ol li.current{
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<ul>
+				<li><a href="javascript:;"><img src="img/1.jpg"/></a></li>
+				<li><a href="javascript:;"><img src="img/2.jpg"/></a></li>
+				<li><a href="javascript:;"><img src="img/3.jpg"/></a></li>
+				<li><a href="javascript:;"><img src="img/4.jpg"/></a></li>
+				<li><a href="javascript:;"><img src="img/5.jpg"/></a></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById("box");
+		var ul=box.children[0];
+		var uli=ul.children;
+		var ulis=uli.length;
+		
+		//添加下标
+		var ol=box.appendChild(document.createElement("ol"));
+		for(var i=0;i<ulis;i++){
+			ol.appendChild(document.createElement("li")).innerHTML=i+1;
+		}
+		//默认选中第一个
+		var oli=ol.children;
+		oli[0].className="current";
+		
+		//克隆第一张图片
+		ul.appendChild(uli[0].cloneNode(true));
+		
+		//点击下标切换图片
+		for(var i=0; i<ulis;i++){
+			oli[i].index=i;
+			oli[i].onmouseover=function(){
+				for(var j=0;j<ulis;j++){
+					oli[j].className="";
+				}
+				this.className="current";
+				
+				//图片要跟着动
+				//ul.style.left=-this.index*uli[this.index].offsetWidth+"px";
+				runBox(ul,-this.index*uli[this.index].offsetWidth);
+				
+				clearInterval(timer);
+			}
+			oli[i].onmouseout=function(){
+				clearInterval(timer);
+				
+				timer=setInterval(autoplay,2000);
+				
+			}
+		}
+		
+		//自动轮播
+		var timer=null;
+		timer=setInterval(autoplay,2000);
+		var num=0,circle=0;
+		function autoplay(){
+			num++;
+			if(num>ulis){
+				num=1;
+				ul.style.left=0;
+			}
+			runBox(ul,-num*500);
+			
+			//下标也要跟着动
+			circle++;
+			if(circle>ulis-1){
+				circle=0;
+			}
+			for(var r=0;r<ulis;r++){
+				oli[r].className="";
+			}
+			oli[circle].className="current";
+		}
+		
+		//动画
+		function runBox(obj,target){
+			clearInterval(obj.timer);
+			var speed=obj.offsetLeft<target?15:-15;
+			
+			obj.timer=setInterval(function(){
+				
+				obj.style.left=obj.offsetLeft+speed+"px";
+				if(Math.abs(target-obj.offsetLeft)<15){
+					clearInterval(obj.timer);
+					obj.style.left=target+"px";
+				}
+			},5);
+		}
+		
+		//鼠标停留再大盒子上时暂停轮播
+		box.onmouseover=function(){
+			clearInterval(timer);
+			
+		}
+		box.onmouseout=function(){
+			clearInterval(timer);
+			
+			timer=setInterval(autoplay,2000);
+			
+		}
+	</script>
+</html>

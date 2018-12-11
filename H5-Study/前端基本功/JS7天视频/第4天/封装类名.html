@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>封装类名</title>
+		<style type="text/css">
+			#one div,#two div{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				margin: 10px 1px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="one">
+			<div class="test"></div>
+			<div class="qw test"></div>
+			<div class="test"></div>
+			<div class="ghf"></div>
+			<div class="test"></div>
+			<div class="test"></div>
+			<div class="test"></div>
+			<div class="fd test cd sd"></div>
+			<div class="dfg test"></div>
+		</div>
+		<div id="two">
+			<div class="test"></div>
+			<div class="qw"></div>
+			<div class="test"></div>
+			<div class="ghf"></div>
+			<div class="test"></div>
+			<div class="dfg"></div>
+		</div>
+		<script type="text/javascript">
+			function getClass(id,clsname){
+				//如果支持
+				if(document.getElementsByClassName){
+					//最好用通过id来，这样限定在的一定的范围内
+					//有id时
+					if(id){
+					var ids=document.getElementById(id);
+					return ids.getElementsByClassName(clsname);
+					}else{//没有id
+						return document.getElementsByClassName(clsname);
+					}
+				}
+				//不支持classname时
+				//看又没有id
+//				if(id){
+//					var eleid=document.getElementById(id);
+//					var dom=eleid.getElementsByTagName("*");
+//				}else{
+//					var dom=document.getElementsByTagName("*");
+//				}
+//				
+				var flag=document.getElementById(id).getElementsByTagName("*");
+				var arr=[];
+				for(var i=0;i<flag.length;i++){
+					var clsarr=flag[i].className.split(" ");
+					for(var j=0;j<clsarr.length;j++){
+						if(clsarr[j]==clsname){
+							arr.push(flag[i]);
+						}
+					}
+				}
+				return arr;
+			}
+			//根据id名，查找里面的classname
+			var cls=getClass("one","test");
+			console.log(cls.length);
+//			console.log(getClass("two","test").length);
+			
+			for(var k=0;k<cls.length;k++){
+				cls[k].style.backgroundColor="skyblue";
+			}
+		</script>
+	</body>
+</html>

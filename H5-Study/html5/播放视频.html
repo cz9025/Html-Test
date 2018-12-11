@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频播放</title>
+    <style>
+        .dataintable {
+            margin-top: 15px;
+
+            border: 1px solid #aaa;
+            width: 25%;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<!--选择不同的视频格式，浏览器会自动选择一种-->
+<video width="320" height="240" controls="controls">
+    <source src="movie.mp4" type="video/mp4"/>
+    <source src="movie.ogg" type="video/ogg"/>
+    <source src="movie.webm" type="video/webm"/>
+    <object data="movie.mp4" width="320" height="240">
+        <embed src="movie.swf" width="320" height="240"/>
+    </object>
+</video>
+<div style="text-align:center;">
+    <button onclick="playPause()">播放/暂停</button>
+    <button onclick="makeBig()">大</button>
+    <button onclick="makeNormal()">中</button>
+    <button onclick="makeSmall()">小</button>
+    <br/>
+    <video id="video1" width="420" style="margin-top:15px;">
+        <source src="img/movie.ogg" type="video/mp4"/>
+        <source src="img/movie.ogg" type="video/ogg"/>
+        <object data="img/movie.ogg" width="320" height="240">
+            <embed src="img/movie.ogg" width="320" height="240"/>
+        </object>
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+<script type="text/javascript">
+    var myVideo = document.getElementById("video1");
+
+    function playPause() {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+
+    function makeBig() {
+        myVideo.width = 560;
+    }
+
+    function makeSmall() {
+        myVideo.width = 320;
+    }
+
+    function makeNormal() {
+        myVideo.width = 420;
+    }
+</script>
+<h1>说明</h1>
+<table class="dataintable">
+    <tbody>
+    <tr>
+        <th style="width:33%;">方法</th>
+        <th style="width:33%;">属性</th>
+        <th>事件</th>
+    </tr>
+
+    <tr>
+        <td>play()</td>
+        <td>currentSrc</td>
+        <td>play</td>
+    </tr>
+
+    <tr>
+        <td>pause()</td>
+        <td>currentTime</td>
+        <td>pause</td>
+    </tr>
+
+    <tr>
+        <td>load()</td>
+        <td>videoWidth</td>
+        <td>progress</td>
+    </tr>
+
+    <tr>
+        <td>canPlayType</td>
+        <td>videoHeight</td>
+        <td>error</td>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td>duration</td>
+        <td>timeupdate</td>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td>ended</td>
+        <td>ended</td>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td>error</td>
+        <td>abort</td>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td>paused</td>
+        <td>empty</td>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td>muted</td>
+        <td>emptied</td>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td>seeking</td>
+        <td>waiting</td>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td>volume</td>
+        <td>loadedmetadata</td>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td>height</td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td>width</td>
+        <td>&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

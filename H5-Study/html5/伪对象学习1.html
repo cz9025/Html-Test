@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 100px;
+				background-color: pink;
+				position: relative;
+			}
+			.box::after{
+				content: "1234567890";
+				color: gray;
+				/*display: none;*/
+				/*position: absolute;
+				left: 300px;
+				top: 0;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		
+		<form action="#" >
+			<input type="date" name="" id="" value="" />
+			<input type="text" name="num" id="num" value=""  required="required"/>
+			<input type="email" name="email" id="email" value="" required="required" />
+			<input type="submit" />
+		</form>
+	</body>
+</html>

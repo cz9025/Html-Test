@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>左右轮播图片</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			ul{
+				list-style: none;
+			}
+			.box{
+				width: 300px;
+				height: 200px;
+				border: 1px solid gray;
+				position: relative;
+				margin: 100px;
+			}
+			.slider{
+				width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			#pics{
+				width: 1000%;
+				height: 200px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#pics li{
+				height: 100%;
+				float: left;
+			}
+			/*左右箭头的*/
+			.arr{
+				display: none;
+			}
+			span{
+				position: absolute;
+				left:5px; top:50%; margin-top:-20px;
+				display: block;
+				width: 40px;
+				height: 40px;
+				background-color: gainsboro;
+				line-height: 40px;
+				font-size: 18px;
+				text-align: center;
+				cursor: pointer;
+			}
+			#right{
+				float: right;
+				right: 5px;
+				left: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box" id="box">
+			<div class="slider" id="slider">
+				<ul id="pics">
+					<li><img src="img/01.jpg" /></li>
+					<li><img src="img/02.jpg" /></li>
+					<li><img src="img/03.jpg" /></li>
+					<li><img src="img/04.jpg" /></li>
+				</ul>
+			</div>
+			<div class="arr" id="arr"><span id="left"><</span><span id="right">></span></div>
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var pis=document.getElementById("pics");
+			var lefts=document.getElementById("left");
+			var rights=document.getElementById("right");
+			var arr=document.getElementById("arr");
+			var leader=0,target=0;
+			
+			box.onmouseover=function(){
+				arr.style.display="block";
+			}
+			box.onmouseout=function(){
+				arr.style.display="none";
+			}
+			
+			
+			lefts.onclick=function(){
+				target+=300;
+				
+			}
+			rights.onclick=function(){
+				target-=300;
+			}
+			setInterval(function(){
+				if(target<=-900){
+					target=-900;
+				}
+				if(target>=0){
+					target=0;
+				}
+				leader=leader+(target-leader)/10;
+				pis.style.left=leader+"px";
+			},30);
+		</script>
+	</body>
+
+</html>

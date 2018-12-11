@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--<script type="text/javascript" src="js/fun.js"></script>-->
+		<title>火箭返回顶部2</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				height: 3000px;
+			}
+			.box{
+				width: 36px;
+				height: 64px;
+				position: fixed;
+				bottom: 50px;
+				right: 50px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<img src="img/Top.jpg"/>
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			
+			var leader=0,target=0;
+			var timer=null;
+			window.onscroll=function(){
+				if(scroll().top>0){
+					box.style.display="block";
+				}else{
+					box.style.display="none";
+				}
+				leader=scroll().top;
+			}
+			box.onclick=function(){
+				timer=setInterval(function(){
+					leader=leader+(target-leader)/10;
+					window.scrollTo(0,leader);
+					if(leader==target){
+						clearInterval(timer);
+					}
+					console.log(leader);
+				},30);
+			}
+			//获得页面滚动的距离
+		function scroll(){
+			if(window.pageYOffset !=null){
+				return{
+					left:window.pageXOffset,
+					top:window.pageYOffset
+				}
+			}else if(document.compatMode=="CSS1Compat"){
+				return{
+					left:document.documentElement.scrollLeft,
+					top:document.documentElement.scrollTop
+				}
+			}
+			return{
+				left:document.body.scrollLeft,
+				top:document.body.scrollTop
+			}
+		}
+		</script>
+	</body>
+</html>

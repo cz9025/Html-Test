@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>水平滚动条制作</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 400px;
+				height: 10px;
+				background-color: darkgray;
+				position: relative;
+				margin: 100px 100px;
+			}
+			#bar{
+				width: 8px;
+				height: 22px;
+				background-color: skyblue;
+				position: absolute;
+				top: -6px;
+				left: 0;
+				cursor: pointer;
+			}
+			#mask{
+				width: 0;
+				height: 100%;
+				background-color: skyblue;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="bar"></div>
+			<div id="mask"></div>
+		</div>
+		<div id="demo"></div>
+		
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var bar=document.getElementById("bar");
+			var demo=document.getElementById("demo");
+			
+			var le=0;
+			//鼠标在按下的时候
+			bar.onmousedown=function(event){
+				var leftval=event.clientX-this.offsetLeft;
+//				console.log(leftval);
+				//按下并且鼠标有移动
+				document.onmousemove=function(event){
+					le=event.clientX-leftval;
+					
+					if(le<0){
+						le=0;
+					}else if(le>box.offsetWidth-bar.offsetWidth){
+						le=box.offsetWidth-bar.offsetWidth;
+					}
+					//遮盖盒子的宽度
+					bar.style.left=le+"px";
+					mask.style.width=le+"px";
+					
+					//计算百分比
+					demo.innerHTML="已经过了:"+parseInt(le/(box.offsetWidth-bar.offsetWidth)*100)+"%";
+					
+					window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+					
+				}
+				
+				document.onmouseup=function(){
+					document.onmousemove=null;
+				}
+			}
+		</script>
+	</body>
+</html>

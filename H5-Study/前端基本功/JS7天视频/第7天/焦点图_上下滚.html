@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>焦点动画</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				width: 300px;
+				height: 200px;
+				padding: 10px;
+				border: 1px solid gray;
+				position: relative;
+			}
+			
+			#slider {
+				width: 100%;
+				height: 100%;
+				border: 1px solid gray;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#slider ul {
+				width: 100%;
+				height: 1000%;
+				list-style: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			img {
+				display: block;
+			}
+			
+			#seq {
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				list-style: none;
+			}
+			
+			#seq li {
+				float: left;
+				margin-left: 10px;
+				background-color: white;
+				width: 18px;
+				height: 18px;
+				text-align: center;
+				line-height: 18px;
+				cursor: pointer;
+			}
+			
+			#seq li.current {
+				background-color: orange;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div id="slider">
+				<ul>
+					<li>
+						<a href="javascript:;"><img src="img/01.jpg" /></a>
+					</li>
+					<li>
+						<a href="javascript:;"><img src="img/02.jpg" /></a>
+					</li>
+					<li>
+						<a href="javascript:;"><img src="img/03.jpg" /></a>
+					</li>
+					<li>
+						<a href="javascript:;"><img src="img/04.jpg" /></a>
+					</li>
+				</ul>
+			</div>
+			<ol id="seq">
+				<li class="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ol>
+		</div>
+		<script type="text/javascript">
+			var seq = document.getElementById("seq");
+			var lichild = seq.children;
+			var header = 0,
+				target = 0;
+			var slider = document.getElementById("slider");
+			var ul = slider.children[0];
+			console.log(lichild.length);
+			for(var i = 0; i < lichild.length; i++) {
+				lichild[i].index = i;
+				lichild[i].onmouseover = function() {
+					for(var j = 0; j < lichild.length; j++) {
+						lichild[j].className = "";
+					}
+					this.className = "current";
+					target = -this.index * 200; //当前的索引号乘以盒子宽
+
+					
+					
+					
+				}
+			}
+			
+			//但是当onmouseover里面的话这个执行的时间有问题
+					setInterval(function() {
+						header = header + (target - header) / 10;
+						ul.style.top = header + "px";
+					}, 50);
+		</script>
+	</body>
+
+</html>

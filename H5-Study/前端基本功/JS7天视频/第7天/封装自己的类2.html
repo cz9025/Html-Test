@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>封装类2</title>
+		<style type="text/css">
+			div {
+				height: 50px;
+				border: 1px solid gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="fu">
+			<div id="box1"></div>
+			<div class="box"></div>
+			<div id="box"></div>
+			<div id="gh"></div>
+			<div class="box fg"></div>
+			<div id="fg box"></div>
+			<div class="box mj"></div>
+			<div class="fg"></div>
+			<div id="bo"></div>
+			<div class="box"></div>
+		</div>
+		<script type="text/javascript">
+			function getClassName(classname) {
+				if(document.getElementsByClassName) {
+					return document.getElementsByClassName(classname);
+				}
+				var arr=[];
+				//最好有个明确的父节点
+				var fu=document.getElementById("fu");
+				var clsflag=fu.getElementsByTagName("*");
+				for(var i=0;i<clsflag.length;i++){
+					var ls=clsflag[i].className.split(" ");
+					for(var j=0;j<ls.length;j++){
+						if(ls[j]==classname){
+							arr.push(clsflag[i]);
+						}
+					}
+				}
+				return arr;
+
+			}
+
+			function $(str) {
+				var str0 = str.charAt(0);
+				switch(str0) {
+					case "#":
+						return document.getElementById(str.substr(1));
+						break;
+					case ".":
+						return getClassName(str.substr(1));
+						break;
+					default:
+						return document.getElementsByTagName(str);
+				}
+			}
+			$("#box1").style.backgroundColor = "pink";
+			$("#box").style.backgroundColor = "pink";
+			$("#bo").style.backgroundColor = "pink";
+			var lens=$(".box");
+			for(var i=0;i<lens.length;i++){
+				lens[i].style.backgroundColor = "skyblue";
+			}
+			
+//			var divs=$("div");
+//			for(var i=0;i<divs.length;i++){
+//				divs[i].style.backgroundColor = "blue";
+//			}
+		</script>
+	</body>
+
+</html>

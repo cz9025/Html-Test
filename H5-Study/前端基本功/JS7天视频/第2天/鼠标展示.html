@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标展示</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 360px;
+				height: 430px;
+				border: 1px solid gray;
+			}
+			.tops{
+				width: 360px;
+				height: 360px;
+				background:url(img/01big.jpg) no-repeat center center;
+			}
+			
+			.bottoms{
+				height: 70px;
+				
+			}
+			.bottoms ul{
+				list-style: none;
+			}
+			.bottoms ul li{
+				float: left;
+				width: 90px;
+				height: 70px;
+				cursor: pointer;
+			}
+			.bottoms ul li#pic1{
+				background:url(img/01.jpg) no-repeat center center;
+			}
+			.bottoms ul li#pic2{
+				background:url(img/02.jpg) no-repeat center center;
+			}
+			.bottoms ul li#pic3{
+				background:url(img/03.jpg) no-repeat center center;
+			}
+			.bottoms ul li#pic4{
+				background:url(img/04.jpg) no-repeat center center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="tops" id="tops"></div>
+			<div class="bottoms">
+				<ul>
+					<li id="pic1" onclick="fn('01big.jpg')" onmouseover="fn('01big.jpg')"></li>  <!--鼠标停留修改或点击修改-->
+					<li id="pic2" onclick="fn('02big.jpg')"></li>
+					<li id="pic3" onclick="fn('03big.jpg')"></li>
+					<li id="pic4" onclick="fn('04big.jpg')" onmouseover="fn('04big.jpg')"></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function fn(pic){
+				var tops=document.getElementById("tops");
+				tops.style.background= "url(img/"+pic+")";
+			}
+			
+			
+		</script>
+	</body>
+</html>

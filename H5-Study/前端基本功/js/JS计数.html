@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS写文本</title>
+    <script>
+        function times() {
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("text").innerHTML = "您已经点击这个按钮 " + localStorage.clickcount + " 次。";
+            } else {
+                document.getElementById("text").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+            }
+
+        }
+
+
+        function clickCounter() {
+            if (typeof(Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "在本 session 中，您已经点击这个按钮 " + sessionStorage.clickcount + " 次。";
+            } else {
+                document.getElementById("result").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+            }
+        }
+    </script>
+</head>
+<body>
+<p>计算按钮点击的次数</p>
+<button onclick="times()" type="button">点我计数</button>
+<div id="text"></div>
+<p>这个次数会一直累加</p>
+<br/>
+<br/>
+<p> 这种方式关闭浏览器会清除数据</p>
+<p>
+    <button onclick="clickCounter()" type="button">请点击这里</button>
+</p>
+<div id="result"></div>
+<p>请点击按钮使计数器递增。</p>
+<p>请关闭浏览器或标签页，然后再试一次，计数器会重置。</p>
+<abbr title="qweqw wqe we">qww</abbr>
+</body>
+</html>

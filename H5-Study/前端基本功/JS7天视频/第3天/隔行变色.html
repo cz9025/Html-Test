@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				list-style-type: none;
+				line-height: 30px;
+			}
+			#box{
+				width: 300px;
+			}
+			.current{
+				background-color: pink !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+				<li><span>第一列</span> <span>第尔烈</span> <span>第三列</span> <span>第四列地方</span> </li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var lis=document.getElementsByTagName("li");
+			for(var i=0,lens=lis.length;i<lens;i+=2){
+				lis[i].style.backgroundColor="red";
+//				鼠标停留在上面时,更换背景颜色
+				lis[i].onmouseover=function(){
+					this.className="current";
+				}
+				lis[i].onmouseout=function(){
+					this.className="";
+				}
+			}
+		</script>
+	</body>
+</html>

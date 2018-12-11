@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {margin-left: 0px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;overflow: hidden;}
+			.blank{
+				width: 600px;
+			}
+		</style>
+	</head>
+	<body>
+
+	</body>
+	<script type="text/javascript">
+		var da=new Date();
+		var str="Vi|sit Runoob Runoob Runoob Runoob";
+		var n=str.search("oo");
+		var n2=str.replace(/oo/ig,"cz");
+		console.log(n);console.log(n2);
+		var n3=str.replace("i|s","666");
+		console.log(n3);
+		
+		var n4=str.replace(/\b/g,"88");
+		console.log(n4);
+		
+		console.log("==================");
+		
+		var pat=new RegExp("\\w+","g");
+		console.log(str.match(pat));
+		
+	</script>
+</html>

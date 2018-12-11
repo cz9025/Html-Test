@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				text-align: center;
+				width: 500px;
+				height: 200px;
+				background-color: pink;
+				margin: 0 auto;
+			}
+			/*.box p{
+				text-indent: 2em;
+			}*/
+			#dao{
+				width: 500px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h1>忘记一个人的滋冷的水</h1>
+			<p>然后用很长很长的时间告诉自己坚强面对</p>
+		</div>
+		<div id="dao"></div>
+		<script type="text/javascript">
+			var dao=document.getElementById("dao");
+			var icon="\u263a&nbsp;&nbsp;";
+			var sp='';
+			var tex='&nbsp;&nbsp;';
+			var t="";
+			for (var i=1;i<7;i++) {
+				
+				sp+=tex;
+				for (var j=7;j>i;j--) {
+					
+					t+=icon;
+					
+				}
+				
+				dao.innerHTML+=sp+t;
+				t="";
+				dao.innerHTML+="<br />";
+			}
+			
+		</script>
+		
+		<br /><br /><br />
+		
+		<input type="text" name="test" id="test" value="haha" />
+		<script type="text/javascript">
+			document.getElementById("test").style.color="red";
+		</script>
+	</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-1.11.1.js"></script>
+		<title>屏幕滑动效果</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			ul,
+			ol {
+				list-style: none;
+			}
+			
+			ul {
+				width: 100%;
+				height: 100%;
+			}
+			
+			ul li {
+				width: 100%;
+				height: 100%;
+			}
+			
+			ol {
+				width: 80px;
+				height: 300px;
+				position: fixed;
+				top: 50%;
+				margin-top: -150px;
+				right: 20px;
+				/*display: none;*/
+			}
+			
+			ol li {
+				line-height: 50px;
+				width: 80px;
+				cursor: pointer;
+			}
+			ol li.current{
+				color: #FFFFFF;
+				background-color: pink;
+			}
+		</style>
+	</head>
+
+	<body>
+<div style="height: 400px;"></div>
+		<ol id="flow">
+			<li>第一楼</li>
+			<li>第二楼</li>
+			<li>第三楼</li>
+			<li>第四楼</li>
+			<li>第五楼</li>
+			<li>第六楼</li>
+		</ol>
+		<ul id="cont">
+			<li>第一楼</li>
+			<li>第二楼</li>
+			<li>第三楼</li>
+			<li>第四楼</li>
+			<li>第五楼</li>
+			<li>第六楼</li>
+			<li>第777777楼</li>
+		</ul>
+		<script type="text/javascript">
+			
+			$(function(){
+				$("#flow").hide();
+				var arr=["blue","skyblue","green","yellow","orange","gray","green"];
+				$("#cont>li").each(function(i,e){
+					$(this).css("background-color",arr[i]);
+				})
+				//滚动屏幕时
+				var tops=0;
+				$(window).scroll(function(){
+					tops=$(document).scrollTop();
+					//根据这个值  跟每个li到顶部的距离对比
+					if(tops>=$("#cont li").eq(5).offset().top){
+						$("#flow li").eq(5).addClass("current").siblings().removeClass("current");
+					}else if(tops>=$("#cont li").eq(4).offset().top){
+						$("#flow li").eq(4).addClass("current").siblings().removeClass("current");
+					}else if(tops>=$("#cont li").eq(3).offset().top){
+						$("#flow li").eq(3).addClass("current").siblings().removeClass("current");
+					}else if(tops>=$("#cont li").eq(2).offset().top){
+						$("#flow li").eq(2).addClass("current").siblings().removeClass("current");
+					}else if(tops>=$("#cont li").eq(1).offset().top){
+						$("#flow li").eq(1).addClass("current").siblings().removeClass("current");
+					}else if(tops>=$("#cont li").eq(0).offset().top){
+						$("#flow").show();
+						$("#flow li").eq(0).addClass("current").siblings().removeClass("current");
+					}else{
+							$("#flow").hide();
+					}
+
+					
+				})
+				
+			})
+		</script>
+	</body>
+
+</html>

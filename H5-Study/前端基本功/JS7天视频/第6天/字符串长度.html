@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串长度</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var str = "i like you, you 知道吗?";
+
+			function getStringLength(str) {
+				var len = 0;
+				var	c = 0;
+				for(var i = 0; i < str.length; i++) {
+					c = str.charCodeAt(i);//每一个字符对应的编码
+					if(c >= 0 && c <= 127) {
+						len++;
+					} else {
+						len += 2;
+					}
+				}
+				return len;
+			}
+
+			console.log(str.length);
+			
+			console.log(getStringLength(str));
+		</script>
+	</body>
+
+</html>

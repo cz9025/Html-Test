@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				height: 200px;
+				background-color: #CCCCCC;
+				color: #000000;
+			}
+		</style>
+	</head>
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script src="../js/jquery.color.js"></script>
+
+	<script type="text/javascript">
+		
+		//	第一步： 引入jQuery
+		//	第二步：引入第三方插件
+		//	第三步：用第三方插件实现效果
+
+		$(function() {
+			$("div").eq(0).animate({
+
+				backgroundColor: "#000",
+				color: "#fff",
+				width: "400px"
+			}, 2000);
+			
+			//没反应
+			$("#block").animate({
+				backgroundColor: $.Color({ saturation: 0 })
+				}, 1500 );
+			
+		})
+		
+		
+	</script>
+
+	<body>
+
+		<div>1234567890-</div>
+		<div id="block">1234567890-</div>
+	</body>
+
+</html>

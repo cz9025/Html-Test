@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			input,button,select,textarea{outline:none;}
+			
+			a,
+			a:hover {
+				text-decoration: none;
+			}
+			
+			ul.uli {
+				list-style: none;
+				width: 140px;
+				border: 1px solid skyblue;
+				display: none;
+				margin-top: 2px;
+			}
+			
+			ul.uli li {
+				height: 30px;
+				line-height: 30px;
+				padding-left: 10px;
+				background-color: pink;
+				border-bottom: solid skyblue 1px;
+			}
+			
+			ul.uli li:last-child {
+				border-bottom: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="btn-group">
+
+				<button type="button " class="btn btn-info btn-lg" >选择按钮</button>
+				<button class="btn btn-info btn-sm" id="btn">
+					<span class="caret"></span>
+				</button>
+			</div>
+			<ul class="uli" id="uli">
+				<li>
+					<a href="#">选项1</a>
+				</li>
+				<li>
+					<a href="#">选项1</a>
+				</li>
+				<li>
+					<a href="#">选项1</a>
+				</li>
+				<li>
+					<a href="#">选项1</a>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$("#btn").on("click", function(event) {
+					$("#uli").toggle();
+
+					event.stopPropagation(); //阻止事件冒泡 
+				})
+				//	空白处点击也要隐藏
+				$(document).click(function() {
+					console.log(1)
+					$("#uli").css({
+						"display": "none"
+					})
+				})
+			})
+			
+		</script>
+	</body>
+
+</html>

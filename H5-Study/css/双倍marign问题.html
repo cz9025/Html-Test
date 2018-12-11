@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>双倍margin问题</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				float: left;
+				width: 80px;
+				background-color: pink;
+				margin-left: 20px;
+				list-style: none;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>在个在IE6上面会出现左边双倍margin的问题，解决办法：把margin-left该为margin-right，再加个padding-left就能搞定</p>
+			<ul>
+				<li>list1</li>
+				<li>list2</li>
+				<li>list3</li>
+				<li>list4</li>
+				<li>list5</li>
+			</ul>
+		</div>
+	</body>
+</html>

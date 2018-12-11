@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>第二天JS练习</title>
+	</head>
+
+	<body>
+		<!--小题目：
+			用户输入自己的年龄，判断用户是否在18~70岁，如果在，那么弹出框框“恭喜，可以考驾照”，“加油啊”；
+			否则弹出“年龄不符合要求”。  最后，都要弹出“么么哒”。
+			var age = parseFloat(prompt("输入年龄"));
+			if(age >= 18 && age <= 70) {
+				alert("恭喜，可以考驾照");
+			} else {
+				alert("年龄不符合要求");
+			}
+			alert("么么哒");
+			-->
+
+		<!--小题目：
+			判断用户输入的密码是否正确，如果是123，那么就弹出正确；如果不是，就弹出错误。
+			var pwd=prompt("输入密码");
+			if(pwd==123){
+				alert("输入正确");
+			}else{
+				alert("输入错误");
+			}-->
+
+		<!--小题目：
+			BMI =体重÷身高的平方;过轻：低于18.5
+			正常：18.5-24.99999999
+			过重：25-27.9999999
+			肥胖：28-32
+			非常肥胖, 高于32
+			var gao=parseFloat(prompt("输入身高，以米为单位"));
+			var kg=parseFloat(prompt("输入体重，以公斤为单位"));
+			var BMI=kg/Math.pow(gao,2);
+			if(BMI<=18.5){
+				console.log("过轻");
+			}else if(BMI<=24.99){
+				console.log("正常");
+			}else if(BMI<=27.99){
+				console.log("过重");
+			}else if(BMI<=32){
+				console.log("肥胖");
+			}else{
+				console.log("非常肥胖");
+			}-->
+
+		<!--作业：找出能被6或者5整除的可能性提示：
+			var num=parseInt(prompt("输入一个数"));
+			if(num%6==0||num%5==0){
+				if(num%6==0){
+					if(num%5==0){
+						alert("这个数既能被6整除也能被5整除");
+					}else{
+						alert("这个数能被6整除,不能被5整除");
+					}
+				}else{
+					alert("这个数既不能被6整除,能被5整除");
+				}
+				
+			}else{
+				alert("这个数不能被6整除，也不能被5整除");
+			}-->
+
+		<!--第二题：找出1~1000之中，所有能被5整除，或者被6整除的数字。在控制台输出。
+			for(var i=1; i <= 1000; i++) {
+				if(i % 5 == 0 || i % 6 == 0) {
+					console.log(i);
+				}
+			}
+		-->
+		
+		<!--用户输入一个数字，列出所有它能够整除的数字。比如用户输入48，那么控制台中将显示：
+			var num= parseInt(prompt("输入一个数"));
+			 for(var i=1; i<=num; i++){
+			 	if(num%i==0){
+			 		console.log(i);
+			 	}
+			 }
+		-->
+		<!--求水仙花
+			for(var i=100; i<1000;i++){
+				var bai=parseInt(i/100);
+				var shi=parseInt(i%100/10);
+				var ge=parseInt(i%10);
+				if(Math.pow(bai,3)+Math.pow(shi,3)+Math.pow(ge,3)==i){
+					console.log(i);
+				}
+			}
+		-->
+
+		<script type="text/javascript">
+			 var sum=1;
+			for( var i =1; i<=13;i++){
+				sum=sum*i;
+			}
+			console.log(sum);
+		</script>
+
+	</body>
+
+</html>

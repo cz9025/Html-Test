@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>仿百度ajax</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.search{
+				margin: 100px;
+			}
+			#txt{
+				width: 200px;
+			}
+			#box{
+				width: 200px;
+				list-style: none;
+				display: inline-block;
+				border: 1px solid gray;
+				display: none;
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+
+	</head>
+	<body>
+		<div class="search">
+			<input type="text" id="txt" placeholder="仿百度ajax" autofocus="autofocus" />
+			<!--<input type="button" id="btn" value="查看匹配" />-->
+			<br />
+			<ul id="box"></ul>
+		</div>
+	</body>
+	
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//按键抬起时触发
+			$("#txt").keyup(function(){
+				
+				if($("#txt").val().length==0){
+					$("#box").css("display","none");	
+				}else{
+					$("#box").css("display","block");
+				}
+				
+				$.ajax({
+					type:"get",
+					url:"https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+$("#txt").val(),
+					async:true,
+					dataType: 'jsonp',// 返回的数据类型，设置为JSONP方式
+					//这个回调方法名必须这样，百度规定这样了
+					jsonp: 'cb', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+					//jsonCallback:'jsoncallback', //设置回调函数名
+					success:function(data){
+						//如果没有匹配内容则隐藏
+						if(data.s.length==0){
+							$("#box").css("display","none");
+						}
+						$("#box").text("");
+						$.each(data.s,function(i,e){
+							$("#box").append($("<li></li>").text(e));
+						})
+					}
+				});	
+			});
+			
+		});
+		
+	</script>
+</html>

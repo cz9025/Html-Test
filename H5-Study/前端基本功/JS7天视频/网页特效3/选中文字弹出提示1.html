@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 700px;
+				border: 1px solid gray;
+				padding: 15px;
+				position: relative;
+			}
+			#copy{
+				margin-bottom: 20px;
+			}
+			#txt{
+				display: block;
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span id="txt"></span>
+			<p id="copy">这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字这是要渎职的文字</p>
+			
+			<p>这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字这不能复制文字</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var txt=document.getElementById("txt");
+		var copy=document.getElementById("copy");
+		
+		var str=null;
+		copy.onmouseup=function(event){
+//			var event=event||window.event;
+			var x=event.clientX;
+			var y=event.clientY;
+			
+			str=window.getSelection().toString();
+			
+			
+			
+			if(str){//只有选择了文字才执行
+			
+				showBox(x, y, str);
+			}
+			
+		}
+		
+		function showBox(x, y, str){
+			setTimeout(function(){
+				txt.style.display="block";
+				txt.style.top=y+"px";
+				txt.style.left=x+"px";
+				txt.innerHTML=str;
+			},100);
+			
+			//点击空白处关闭盒子
+			document.onmousedown=function(event){
+//				var event=event||window.event;
+				var id=event.target.id;
+				if(id != "txt"){
+					txt.style.display="none";
+				}
+			}
+		}
+			
+	</script>
+</html>

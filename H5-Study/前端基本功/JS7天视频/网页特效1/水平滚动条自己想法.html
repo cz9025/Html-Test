@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自己的想法</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 400px;
+				height: 8px;
+				background-color: lightgray;
+				margin: 100px 100px;
+				position: relative;
+			}
+			#bar{
+				width: 10px;
+				height: 30px;
+				background-color: pink;
+				position: absolute;
+				top: -11px;
+				left: 0;
+				cursor: pointer;
+			}
+			#mask{
+				width: 0;
+				height: 100%;
+				background-color: skyblue;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="bar"></div>
+			<div id="mask"></div>
+		</div>
+		<div id="demo"></div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var bar=document.getElementById("bar");
+			var demo=document.getElementById("demo");
+			var mask=document.getElementById("mask");
+			
+			//游标的活动范围
+			var min=box.offsetLeft;
+			var max=box.offsetWidth-bar.offsetWidth;
+			var news=0;
+			
+			bar.onmousedown=function(event){
+				document.onmousemove=function(event){
+					//这样不行,会跳一下
+					news=event.pageX-min;
+					if(news<0){
+						news=0;
+					}
+					if(news>max){
+						news=max;
+					}
+					bar.style.left=news+"px";
+					demo.innerHTML=parseInt(news/max*100)+"%";
+					
+					//划过的进度变色
+					mask.style.width=news+"px";
+					window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+				}
+			}
+			 document.onmouseup = function() {
+            	document.onmousemove = null;   // 弹起鼠标不做任何操作
+        }
+		</script>
+	</body>
+</html>

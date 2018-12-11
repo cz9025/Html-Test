@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>微博发布</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				width: 500px;
+				border: 1px solid gray;
+			}
+			
+			#tops {
+				margin: 15px 0;
+			}
+			
+			#txt {
+				width: 70%;
+				resize: none;
+			}
+			#box ul{
+				margin: 0 70px;
+				list-style: none;
+				
+			}
+			#box ul li{
+				line-height: 30px;
+				border-bottom: 1px dashed gray;
+			}
+			.del{
+				float: right;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div id="tops">
+				<span>微博发布:</span>
+				<textarea name="txt" rows="10" cols="10" id="txt"></textarea>
+				<button type="button" id="btn">发布</button>
+				
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+			function $(id){return document.getElementById(id);}
+			//事先创建一个ul，然后每次点击的时候再创建li
+			var ul=document.createElement("ul");
+			
+			$("box").appendChild(ul);
+			//按钮点击事件
+			$("btn").onclick=function(){
+				if($("txt").value==""){
+					alert("请输入内容");
+					return;
+				}
+				var li=document.createElement("li");
+//				var a=document.createElement("a");
+//				a.setAttribute("class","del");
+//				a.innerHTML="删除";
+//				li.appendChild(a);
+				li.innerHTML=$("txt").value+"<a href='javascript:;' class='del'>删除</a>";
+				$("txt").value="";
+				if(ul.children==0){
+					ul.appendChild(li);
+				}else{
+					ul.insertBefore(li,ul.children[0]);
+				}
+				
+				//删除  效果
+				var a_len=ul.getElementsByTagName("a");
+				for(var i=0; i<a_len.length;i++){
+					a_len[i].onclick=function(){
+						ul.removeChild(this.parentNode);
+					}
+				}
+			}
+			
+		</script>
+	</body>
+
+</html>

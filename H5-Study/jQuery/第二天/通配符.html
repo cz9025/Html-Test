@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			<h1>第一个</h1>
+			<p>这是P啊</p>
+			<a href="通配符.html">1234567890</a>
+			<span>
+				this is span
+			</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//这样能选择所有的标签
+			$(".box *").css("color","orange");
+		})
+	</script>
+</html>

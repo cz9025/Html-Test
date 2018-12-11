@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 500px;
+				height: 200px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<button type="button" id="btn" onclick="fn();">修改</button>
+		<script>
+			var box=document.getElementById("box");
+			function fn(){
+				box.style.width="300px";
+				box.style.height="300px";
+				box.style.background="red";
+			}
+		</script>
+	</body>
+</html>

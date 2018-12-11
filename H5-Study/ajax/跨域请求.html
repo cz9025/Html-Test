@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>豆瓣书城</title>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+//			function jsoncallback(result){
+//				console.log(result);
+//		}
+	
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txt" placeholder="输入条目数" />
+		<input type="button" id="btn" value="豆瓣接口" />
+		<div id="box"></div>
+		
+	</body>
+	
+	
+	<script type="text/javascript">
+		$(function(){
+			var txt=document.getElementById("txt");
+			$("#btn").click(function(){
+				$.ajax({
+					type:"get",
+					url:"https://api.douban.com/v2/book/search?q=javascript&count="+txt.value,
+					async:true,
+					dataType: 'jsonp',// 返回的数据类型，设置为JSONP方式
+					jsonp: 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+					//用默认的回调方法可以不用单独写，但要看接口有没有做限制，
+					//jsonCallback:'jsoncallback', //设置回调函数名
+					success:function(data){
+						console.log(data);	
+					}
+				});	
+			});
+			
+		});
+		
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>伪类</title>
+		<style type="text/css">
+			a{
+				text-decoration: none;
+			}
+			.link1{
+				color: blue;
+			}
+			.link2{
+				color: yellow;
+			}
+			.link3{
+				color: green;
+			}
+			/*没访问过的颜色*/
+			a:link{
+				/*color: pink;*/
+			}
+			/*访问过的颜色*/
+			a:visited{
+				color: gray;
+			}
+			/*鼠标停留的颜色*/
+			a:hover{
+				color: red;
+			}
+			/*鼠标按下的颜色*/
+			a:active{
+				color: #A6E1EC;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="null_content.html"class="link1">看我眼色</a>
+		<a href="#"class="link2">颜色变化</a>
+		<a href="CSS1.html"class="link3">看我yanse</a>
+	</body>
+</html>

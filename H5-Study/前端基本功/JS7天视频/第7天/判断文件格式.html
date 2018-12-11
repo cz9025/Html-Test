@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>判断文件格式</title>
+	</head>
+
+	<body>
+		<input type="file" name="file" id="files" /><span></span>
+		<script type="text/javascript">
+			var files = document.getElementById("files");
+			files.onchange = function() {
+				var str = this.value;
+				//
+				var lst=str.substr(str.lastIndexOf(".")).toUpperCase();
+				//
+				if(lst==".JPG"||lst==".PNG"){
+					this.nextElementSibling.innerHTML="格式正确";
+				}else{
+					this.nextElementSibling.innerHTML="格式错误";
+				}
+			}
+		</script>
+	</body>
+
+</html>

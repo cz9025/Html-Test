@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>定时器体验</title>
+	</head>
+	<body>
+		<p id="timer"></p>
+		<script type="text/javascript">
+			var timer=document.getElementById("timer");
+			var end = setInterval(fn,1000);
+			var num=1;
+			function fn(){
+				num+=1;
+				timer.innerHTML=num;
+				//设置停止
+				if(num==10){
+					clearInterval(end);
+				}
+			}
+		</script>
+	</body>
+</html>

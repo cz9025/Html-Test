@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<h3>以下设置中会有覆盖现象,测试时记得先注释下</h3>
+		<ul class="ul">
+			<li>我有很多兄弟01</li>
+			<li>我有很多兄弟02</li>
+			<li>我有很多兄弟03</li>
+			<li>我有很多兄弟04</li>
+			<li>我有很多兄弟05</li>
+			<li>我有很多兄弟06</li>
+			<li>我有很多兄弟07</li>
+			<li>我有很多兄弟08</li>
+			<li>我有很多兄弟09</li>
+			<li>我有很多兄弟10</li>
+		</ul>
+
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			
+			//选择第一个元素
+			$(".ul li:first").css("font-size","40px");
+			$(".ul li").first().css("font-size","40px");
+			
+			//选择最后一个元素
+//			$("ul li:last").css("color","red");
+			
+			//选择他的第三个孩子,从1开始
+			$("ul li:nth-child(3)").css("color","orange");
+			
+			//第二个元素,从0开始
+			$("ul li:eq(1)").css("line-height","40px");
+			
+			//选择序号大于3的元素
+//			$("ul li:gt(3)").css("color","blue");
+			
+			//选择序号小于3的元素
+//			$("ul li:lt(3)").css("color","#00FF00");
+			
+			
+		});
+	</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>box-shadow</title>
+		<style type="text/css">
+			.box {
+				width: 300px;
+				height: 200px;
+				margin: 20px;
+				box-shadow: 4px 2px 8px #0f0, -4px -2px 6px #000, 0 0 8px 5px #f00 inset;
+			}
+			
+			.pbg {
+				font-size: 24px;
+				font-weight: bold;
+				display: inline-block;
+				background: rgba(255, 255, 255, 0.5);
+			
+			}
+			
+			.linerbg{
+					background-image: linear-gradient(to left, yellow,red,green,blue,indigo,violet);
+					font-size: 24px;
+					font-weight: bold;
+					text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--文字显示在图片的上面并以半透明的的方式显示-->
+		<p>盒子阴影</p>
+		<div class="box"></div>
+		<div style="background: url(img/pic01.jpg);width: 256px; height: 200px;text-align: center;">
+			<p class="pbg">半透明色</p>
+		</div>
+		<p class="linerbg">看我身后的颜色，都在变化</p>
+		<p style="background-image:linear-gradient(to top left,red, orange,yellow,green,blue,indigo,violet);width: 256px; height: 200px;text-align: center;">再看看我的</p>
+
+	</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS练习</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			var a=100;
+			//注释
+//			alert("我第一次自己写JS脚本");
+//			console.log(a);
+//			console.log("a");
+//			console.log("a"+a);
+//			console.log(typeof a);
+//			console.log("sd 'd d'ddf");
+//			
+//			var b = Math.pow(3,4);
+//			console.log(b);
+			
+//			var c = prompt("输入你想要的字符");
+//			console.log(typeof c);
+//			console.log(c);
+			
+//			console.log(parseInt(234.5));
+//			下面是作业部分
+//			第一题(123+45*78)/(34+543)-9*(324-34)
+			console.log("第一题："+((123+45*78)/(34+543)-9*(324-34)));
+//			第二题摄氏度转华氏温度
+			var she= parseInt(prompt("输入一个摄氏温度"));
+			console.log("第二题："+9/5*she+32);
+//			第三题  ((23+5的7次幂)/45)的平方
+			console.log("第三题："+Math.pow((23+Math.pow(5,7))/45,2));
+//			第四题 面积=3*根号三/2*边长的平方
+			var bian=parseInt(prompt("输入一个边长："));
+			console.log("第四题："+3*Math.sqrt(3)/2*Math.pow(bian,2));
+//			第五题 今天是星期六,1000天后是星期几
+			console.log("第五题："+(1000%7+6)%7);
+//			第六题 求155三个之和
+			var number = parseInt(prompt("输入一个三位数"));
+			var bai= parseInt(number/100);
+			var shi=parseInt(number%100/10);
+			var ge=parseInt(number%10);
+			console.log("第六题："+bai+shi+ge);
+			
+			console.log("一个小计算器");
+			var a = parseInt(prompt("输入一个数"));
+			var b =parseInt(prompt("请输入另外一个数"));
+			var sum= a+b;
+			console.log(a+"+"+b+"="+sum);
+			
+		</script>
+	</body>
+</html>

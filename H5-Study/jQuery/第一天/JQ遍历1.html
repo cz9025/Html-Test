@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-1.11.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="new_file.css"/>
+		<title></title>
+		<script type="text/javascript">
+			$(function(){
+				$("span").parentsUntil(".ul").css("border","2px solid red");
+				
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<p>我加载了别的页面进来了</p>
+			<ul class="ul">
+				<li>98765432
+					<ul>
+				<li>123570
+				<span id="ad">
+					gggggggggggg
+				</span></li>
+			</ul>
+				</li>
+				
+			</ul>
+			
+		</div>
+		<p>=======================</p>
+		<div id="bb"></div>
+	</body>
+	
+	
+	<script type="text/javascript">
+		$(function(){
+			$("#bb").load("new_file.html");
+			
+			var obj = {
+				read:function(){
+					
+					console.log(666)
+				}
+			};
+			obj.read()
+			
+		
+		})
+	</script>
+</html>

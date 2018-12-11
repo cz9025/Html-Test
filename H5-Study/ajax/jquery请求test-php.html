@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<input type="button" id="btn" value="请求test" />
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$("#btn").click(function() {
+				$.ajax({
+					type: "get",
+					url: "test.php",
+					async: true,
+					success: function(d) {
+						var json=JSON.parse(d);
+						console.log(json.a);
+					},
+					error: function(e) {
+						console.log(e);
+					}
+
+				});
+			});
+		});
+	</script>
+
+</html>

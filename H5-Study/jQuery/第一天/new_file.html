@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="new_file.css"/>
+		<title></title>
+		
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li>很多兄弟1</li>
+				<li>很多兄弟2</li>
+				<li>很多兄弟3</li>
+				<li class="item">很多兄弟4</li>
+				<li>很多兄弟5</li>
+				<li>很多兄弟6</li>
+				<li>很多兄弟7</li>
+				<li>很多兄弟8</li>
+				<li>很多兄弟9</li>
+				<li>很多兄弟10</li>
+			</ul>
+			
+		</div>
+		<span>div的兄弟</span>
+	</body>
+</html>
+
+<script type="text/javascript">
+		$(".item~li").css("color","red");
+		$(".box+span").css("color","blue");
+		
+		
+	</script>

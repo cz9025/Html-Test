@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function par(param) {
+				var data = {name: 3};
+				param.success(data);
+			}
+			par({
+				url: "test.php",
+				type: "get",
+				async: true,
+				success: function(data) {
+					console.log(data);
+				}
+			})
+		</script>
+	</body>
+
+</html>

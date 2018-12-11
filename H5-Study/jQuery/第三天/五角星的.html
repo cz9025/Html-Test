@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../js/jquery.lazyload.js"></script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				
+			}
+			.xing{
+				list-style: none;
+				
+			}
+			.xing li{
+				float: left;
+				width: 26px;
+				height: 26px;
+				line-height: 26px;
+				text-align: center;
+				margin-left: 5px;
+				font-size: 26px;
+				cursor: pointer;
+			}
+			.active{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul class="xing">
+				<li>☆</li>
+				<li>☆</li>
+				<li>☆</li>
+				<li>☆</li>
+				<li>☆</li>
+			</ul>
+		</div>
+		<div class="con" style="height: 2000px;"></div>
+		<div >
+			<img class="foot" data-original="img/001.jpg"/>
+			<img class="foot" data-original="img/001.jpg"/>
+			<img class="foot" data-original="img/001.jpg"/>
+		</div>
+		<script type="text/javascript">
+			var nox="☆";
+			var sel="★";
+			$('.xing li').each(function(){
+				$(this).mouseenter(function(){
+					$(this).text(sel).prevAll().text(sel).end().nextAll().text(nox);
+				})
+				.mouseleave(function(){
+					$(this).text(nox).prevAll().text(nox).end().nextAll().text(nox);
+					$('.active').text(sel).prevAll().text(sel);
+				});
+				
+				
+				$(this).click(function(){
+//					$(this).text(nox).prevAll().text(nox);
+					$(this).addClass('active').siblings().removeClass('active');
+					$(this).nextAll().text(nox);
+				});
+				
+			$('.foot').lazyload();
+			});
+		</script>
+	</body>
+</html>

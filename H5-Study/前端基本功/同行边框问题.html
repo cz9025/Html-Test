@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>同行边框问题</title>
+		<style type="text/css">
+			.test{
+				width: 150px;
+				height: 100px;
+				border: 1px solid green;
+				float: left;
+				margin-left: -1px;
+			}
+			.test:hover{
+				border: 1px solid red;
+				position: relative;
+			}
+			.zindex{
+				width: 150px;
+				height: 100px;
+				border: 1px solid green;
+				float: left;
+				margin-left: -1px;
+				position: relative;
+			}
+			.zindex:hover{
+				border: 1px solid red;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>方式1，直接加定位方式解决</h1>
+		<div class="test"></div>
+		<div class="test"></div>
+		<div class="test"></div>
+		<div class="test"></div>
+		<div class="test"></div>
+		
+		<div style="width: 100%;height: 1px;overflow: hidden;"></div>
+		<h1>方式2，如果本身就有相对定位，那么层级z-index值都为0，那就要提高选中的那个的值</h1>
+		<div class="zindex"></div>
+		<div class="zindex"></div>
+		<div class="zindex"></div>
+		<div class="zindex"></div>
+		<div class="zindex"></div>
+		
+	</body>
+</html>

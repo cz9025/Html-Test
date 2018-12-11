@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全选和反选的</title>
+	</head>
+	<body>
+		<button id="all">全选</button>	<button id="qx">取消</button>	<button id="fx">反选</button>
+		<ul>
+			<li>选项<input type="checkbox"></li>
+			<li>选项<input type="checkbox"></li>
+			<li>选项<input type="checkbox"></li>
+			<li>选项<input type="checkbox"></li>
+			<li>选项<input type="checkbox"></li>
+			<li>选项<input type="checkbox"></li>
+			<li>选项<input type="checkbox"></li>
+			<li>选项<input type="checkbox"></li>
+			<li>选项<input type="checkbox"></li>
+			<li>选项<input type="checkbox"></li>
+		</ul>
+		<script type="text/javascript">
+			function $(id){return document.getElementById(id);}
+			var lens=document.getElementsByTagName("input");
+			function selects(flag){
+				for(var i=0;i<lens.length;i++){
+					lens[i].checked=flag;
+				}
+			}
+			$("all").onclick=function(){
+				selects(true);
+			}
+			$("qx").onclick=function(){
+				selects(false);
+			}
+			
+			$("fx").onclick=function(){
+				for(var i=0;i<lens.length;i++){
+					lens[i].checked==true ? lens[i].checked=false:lens[i].checked=true;
+				}
+			}
+		</script>
+	</body>
+</html>

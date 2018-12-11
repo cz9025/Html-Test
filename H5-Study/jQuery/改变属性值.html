@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>改变属性值</title>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		<button type="button">修改属性</button>
+		<a href="http://www.baidu.com">百度</a>
+		
+		<script type="text/javascript">
+			$(function(){
+				$("button").click(function(){
+					$("a").attr({
+						"href":"http://www.163.com",
+					"title":"12345678"});
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>switch使用</title>
+	</head>
+	<body>
+		<input type="text" name="txt"  id="txt"  />  <button id="btn">查看价格</button>
+		<script type="text/javascript">
+			function $(id){return document.getElementById(id);}
+			$("btn").onclick=function(){
+				var price=$("txt").value;
+				switch (price){
+					case "1":
+						alert("今天价格555"); break;
+					case "2":
+						alert("今天价格666"); break;
+					case "3":
+						alert("今天价格888"); break;
+					default:
+						alert("今天没有东西");
+				}
+				
+			}
+		</script>
+	</body>
+</html>

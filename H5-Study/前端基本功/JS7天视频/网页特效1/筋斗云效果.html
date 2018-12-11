@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>筋斗云效果</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body {
+            	background-color: #000;
+        	}
+        	.nav{
+        		width: 800px;
+        		height: 42px;
+        		background: url(img/rss.png) no-repeat right center #FFFFFF;
+        		border-radius: 5px;
+        		position: relative;
+        		margin: 100px auto;
+        	}
+        	#yun{
+        		width: 83px;
+        		height: 42px;
+        		background: url(img/cloud.gif) no-repeat center center;
+        		position: absolute;
+        		top: 0;
+        		left: 0;
+        	}
+        	.nav ul{
+        		position: absolute;
+        		top: 0;
+        		left: 0;
+        		list-style: none;
+        	}
+        	.nav ul li{
+        		float: left;
+        		width: 83px;
+        		height: 42px;
+        		line-height: 42px;
+        		text-align: center;
+        		color: #000000;
+        		cursor: pointer;
+        	}
+		</style>
+	</head>
+	<body>
+		<div id="nav" class="nav">
+			<span id="yun"></span>
+			<ul>
+				<li>首页新闻</li>
+				<li>师资力量</li>
+				<li>活动策划</li>
+				<li>企业文化</li>
+				<li>招聘信息</li>
+				<li>公司简介</li>
+				<li>上海小区</li>
+				<li>广州小区</li>
+			</ul>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var leader=0;target=0;
+			var current=0;
+			var nav=document.getElementById("nav");
+			var ul=nav.children[1].children;
+			var yun=document.getElementById("yun");
+			
+			for(var i=0;i<ul.length;i++){
+				ul[i].index=i;
+				ul[i].onmouseover=function(){
+					target=this.offsetLeft;
+				}
+				ul[i].onmouseout=function(){
+					target=current;
+				}
+				ul[i].onclick=function(){
+					current=this.offsetLeft;
+				}
+			}
+			
+			setInterval(function(){
+				leader=leader+(target-leader)/10;
+				yun.style.left=leader+"px";
+				
+			},10);
+		</script>
+	</body>
+</html>
+83  42

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>父子元素边距的问题</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box1{
+				width: 300px;
+				height: 200px;
+				background-color: pink;
+			}
+			/*当子元素想距离父元素边距时,整个父元素也会下移*/
+			.zi{
+				width: 50px;
+				height: 50px;
+				background-color: blue;
+				margin-top: 20px;
+			}
+			.box2{
+				width: 300px;
+				height: 200px;
+				background-color: pink;
+				padding-top: 20px;
+			}
+			.zi2{
+				width: 50px;
+				height: 50px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<!--尽量利用父元素的padding，而不是子元素的margin-->
+
+	<body>
+		<p>这里用子元素的margin，导致父元素也会下移</p>
+		<div class="box1">
+			<p class="zi"></p>
+		</div>
+		
+		<p>这里用父元素的padding</p>
+		<div class="box2">
+			<p class="zi2"></p>
+		</div>
+	</body>
+
+</html>

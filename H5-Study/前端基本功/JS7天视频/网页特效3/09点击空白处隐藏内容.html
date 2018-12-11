@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 300px;
+				height: 200px;
+				background: pink;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<button id="btn">按钮</button>
+		</div>
+
+		<script type="text/javascript">
+			var btn = document.getElementById("btn");
+
+			btn.onclick = function(event) {
+				alert("按钮点击的");
+				event.stopPropagation();
+			}
+
+			document.onclick = function(event) {
+				//获得对象的ID
+				var target = event.target ? event.target.id : event.srcElement.id;
+				//对象的ID只要不是那个盒子的就进行处理
+				if(target != "box") {
+					alert("不在box盒子内");
+				}
+
+			}
+		</script>
+	</body>
+
+</html>

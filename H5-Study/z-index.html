@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>zindex练习</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+				position: relative;
+				
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+				position: relative;
+				z-index: 66;
+			}
+			.pp1{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				position: absolute;
+				left:300px;
+				top:300px;
+				z-index: 22;
+			}
+			.pp2{
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				position: absolute;
+				top: 150px;
+				left: 350px;
+			
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<p class="pp1"></p>
+		</div>
+		<div class="box2">
+			<p class="pp2">
+				
+			</p>
+		</div>
+		<p>如果父级的z-index大，则儿子的一定要大</p>
+	</body>
+</html>

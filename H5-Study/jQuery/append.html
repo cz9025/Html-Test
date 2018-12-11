@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			$(function(){
+				var txt1=$("<p></p>").text("12345");
+				var txt2=$("<span></span>").text("5432");
+				
+				$("#box").append(txt1,txt2);
+			})
+		</script>
+	</body>
+</html>

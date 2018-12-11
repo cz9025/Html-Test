@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>选中文字弹出提示</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#tan{
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			#test,#demo{
+				width: 500px;
+				border: 1px solid gray;
+				margin: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<span id="tan"></span>
+		<div id="test">可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制 可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制vv可以复制可以复制可以复制 可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制可以复制
+		</div>
+		<div id="demo">不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字 不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字vv 不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字不要的文字v
+		</div>
+		
+		<script type="text/javascript">
+			var test=document.getElementById("test");
+			var tan=document.getElementById("tan");
+			var demo=document.getElementById("demo");
+			
+			var x=0,y=0;
+			test.onmouseup=function(event){
+				var event=event||window.event;//为了兼容
+				x=event.clientX;
+				y=event.clientY;
+				var txt=null;
+				if(window.getSelection){
+					//一般浏览器的写法
+					txt=window.getSelection().toString();
+				}else{
+					//IE的写法
+					txt=document.selection.createRange().text;
+				}
+				//只有选择了文字才弹出
+				if(txt){
+					showTan(x,y,txt);
+				}
+				
+			}
+			function showTan(x,y,txt){
+				//给个延时,松开鼠标后等下弹出
+				setTimeout(function(){
+					tan.style.display="block";
+					tan.style.top=y+"px";
+					tan.style.left=x+"px";
+					tan.innerHTML=txt;
+				},100)
+				
+			}
+			//点击空白处隐藏弹框
+			document.onmousedown=function(event){
+				var event=event||window.event;
+				var target=event.target?event.target.id:event.srcElement.id;
+				if(target!="tan"){
+					tan.style.display="none";
+				}
+			}
+		</script>
+	</body>
+
+</html>

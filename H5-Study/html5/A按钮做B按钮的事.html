@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../jQuery/js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<form action="#">
+			<input type="button" value="去做另一个按钮的事" id="btnnb" />
+
+			<input type="file" name="btn" id="btn" multiple="multiple" />
+
+		</form>
+
+	</body>
+	<script type="text/javascript">
+		var btn = document.getElementById("btn");
+		var btnnb = document.getElementById("btnnb");
+		
+		btnnb.addEventListener("click", function() {
+			btn.click();
+		});
+		btn.addEventListener("change", function() {
+			var files = btn.files;
+			for(var i=0;i<files.length;i++){
+				console.log(files[i].name);
+				console.log(files[i].lastModifiedDate.toLocaleDateString());
+				
+//				files[i].lastModifiedDate.toLocaleDateString() + ' ' + files[i].lastModifiedDate.toLocaleTimeString()
+			}
+		})
+		
+//		为什么用jQuery的方式就报错
+	</script>
+
+</html>

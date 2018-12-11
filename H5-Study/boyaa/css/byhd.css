@@ -1,0 +1,389 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "microsoft yahei";
+	font-size: 14px;
+}
+
+
+/*导航栏部分开始*/
+
+.nav {
+	width: 100%;
+	height: 58px;
+	background-color: #191d3a;
+}
+
+.nav .area {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.nav .area .logo {
+	float: left;
+	width: 225px;
+}
+
+.nav .area .logo a {
+	display: block;
+	width: 157px;
+	height: 35px;
+	margin: 10px 0 0 20px;
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+}
+
+.nav .area .title {
+	float: left;
+}
+
+.nav .area .title ul {
+	list-style: none;
+}
+
+.nav .area .title ul li {
+	float: left;
+	width: 85px;
+	line-height: 58px;
+	text-align: center;
+	border-left: 1px solid #252947;
+}
+
+.nav .area .title ul li.last {
+	border-right: 1px solid #252947;
+}
+
+.nav .area .title ul li a {
+	display: block;
+	text-decoration: none;
+	color: #818496;
+}
+
+.nav .area .title ul li a.current {
+	background-color: #252947;
+	color: white;
+}
+
+.nav .area .title ul li a:link {}
+
+.nav .area .title ul li a:hover {
+	background-color: #252947;
+	color: white;
+}
+
+.nav .area .jrwm {
+	float: left;
+}
+
+.nav .area .jrwm .button {
+	display: inline-block;
+	width: 98px;
+	height: 32px;
+	background-color: #38b774;
+	border: 1px solid #3aca7a;
+	border-radius: 3px;
+	color: white;
+	margin: 12px 0 0 9px;
+	text-decoration: none;
+	line-height: 32px;
+	text-align: center;
+}
+
+.nav .area .jrwm .button:hover {
+	background-color: #388874;
+}
+
+
+/*导航栏部分结束*/
+
+
+/*banner部分*/
+
+.banner {
+	overflow: hidden;
+	width: 100%;
+	height: 460px;
+	/*background-attachment: fixed;*/
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: url(../img/banner.jpg);
+}
+
+
+/*那个大背景图*/
+
+.content_bg {
+	width: 100%;
+	height: 700px;
+	background-image: url(../img/indexmainbg.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+
+/*--四个小图片--*/
+
+.indexpro {
+	width: 1000px;
+	height: 248px;
+	margin: 0 auto;
+	padding-top: 50px;
+	margin-bottom: 40px;
+	border-bottom: 1px solid #dbe1e7;
+}
+
+.indexpro ul {
+	list-style: none;
+}
+
+.indexpro ul li {
+	float: left;
+	text-align: center;
+	margin-right: 43px;
+}
+
+.indexpro ul li.last {
+	margin-right: 0;
+}
+
+.indexpro ul li a {
+	display: block;
+	color: black;
+	text-decoration: none;
+}
+
+.indexpro ul li a h5 {
+	line-height: 18px;
+	padding: 5px 0 10px;
+}
+
+.indexpro ul li a img {
+	width: 217.75px;
+	height: 128.42px;
+}
+
+.indexpro ul li a p {
+	color: #38b774;
+}
+.indexpro ul li a p span{
+	display: inline-block;
+	padding-right: 10px;
+	background: url(../img/arrow.png) no-repeat right center;
+}
+
+/*那个图片下方标题的颜色，默认状态*/
+
+.indexpro ul li a:link {
+	color: #444866;
+}
+
+.indexpro ul li a:hover{
+	background-color: #38b774;
+	color: white;
+}
+.indexpro ul li a:hover span {
+	background: #38b774 url(../img/arrow_hover.png) no-repeat right center;
+	color: white;
+}
+/*四个图片结束*/
+
+
+/*内容开始*/
+
+.content {
+	overflow: hidden;
+	width: 1000px;
+	margin: 0 auto;
+	/*border: 1px solid red;*/
+	padding-bottom: 57px;
+}
+
+.content ul {
+	list-style: none;
+}
+
+.content>ul>li {
+	float: left;
+}
+
+.content ul li.leftimg {
+	width: 500px;
+	height: 310px;
+	background-image: url(../img/bynewsbg.jpg);
+	background-repeat: no-repeat;
+	background-position: 0 -10px;
+	/*background: url(../images/bynewsbg.jpg) no-repeat 0 -10px;*/
+}
+
+.content ul li.leftimg .more {
+	width: 100%;
+	height: 70px;
+}
+
+
+/*那个more+*/
+
+.content ul li.leftimg .more a {
+	display: block;
+	width: 64px;
+	height: 26px;
+	text-decoration: none;
+	color: #30bd72;
+	border: 1px solid #33b972;
+	font-size: 12px;
+	border-radius: 5px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+
+.content ul li.leftimg .bynews {
+	width: 460px;
+	height: 200px;
+	padding: 0 20px;
+}
+
+.content ul li.leftimg .bynews ul {
+	list-style: none;
+}
+
+.content ul li.leftimg .bynews ul li {
+	width: 100%;
+	line-height: 29px;
+	border-bottom: 1px solid #dbe1e7;
+	padding: 10px 0;
+}
+
+.content ul li.leftimg .bynews ul li a {
+	text-decoration: none;
+	color: #444866;
+}
+
+.content ul li.leftimg .bynews ul li a:hover {
+	color: #30bd72;
+}
+
+.content ul li.leftimg .bynews ul li span {
+	float: right;
+	margin-right: 0;
+	color: #afbecf;
+	font-size: 12px;
+}
+
+.content ul li.rightimg {
+	width: 500px;
+	height: 310px;
+	background-image: url(../img/byhrbg3.jpg);
+	background-repeat: no-repeat;
+}
+
+.content ul li.rightimg .byjobs {
+	padding-top: 40px;
+	width: 284px;
+	height: 70px;
+}
+
+.content ul li.rightimg .byjobs .zhaopin {
+	margin-left: 80px;
+	float: left;
+	width: 12px;
+	height: 52px;
+	color: white;
+}
+
+.content ul li.rightimg .byjobs .zhaopin h2 {
+	width: 112px;
+	height: 34px;
+	line-height: 34px;
+	font-size: 28px;
+	
+}
+
+.content ul li.rightimg .byjobs .zhaopin p {
+	width: 112px;
+	height: 18px;
+	font-size: 12px;
+}
+
+.content ul li.rightimg .byjobs span {
+	float: right;
+	display: block;
+	width: 64px;
+	height: 26px;
+}
+
+.content ul li.rightimg .byjobs span a {
+	float: left;
+	display: block;
+	width: 64px;
+	height: 26px;
+	text-decoration: none;
+	color: white;
+	border: 1px solid white;
+	font-size: 12px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.content ul li.rightimg .jobcontent{
+	width: 305px;
+	height: 172px;
+	padding-left: 20px;
+	padding-right: 175px;
+}
+.content ul li.rightimg .jobcontent h3{
+	color: white;
+	line-height: 20px;
+	font-size: 14px;
+}
+.content ul li.rightimg .jobcontent ul>li>a{
+	display: block;
+	width: 100%;
+	height: 29px;
+	padding: 4px 0;
+	border-bottom: 1px solid #6fdea3;
+	color: white;
+	line-height: 29px;
+	text-decoration: none;
+	
+}
+.content ul li.rightimg .jobcontent ul>li>a:hover{
+	color: #444866;
+}
+/*内容结束*/
+
+
+/*底部开始*/
+
+.footer {
+	background-color: #191d3a;
+	height: 192px;
+}
+
+.footer .db {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+.footer .c1 {
+	line-height: 50px;
+	font-size: 12px;
+	color: #6c6e7e;
+}
+
+.footer p.c1 a{
+	line-height: 50px;
+	text-decoration: none;
+	color: #6c6e7e;
+	font-size: 12px;
+}
+.footer p.c1 a:hover{
+	color: white;
+}
+.footer p.c1 a>img{
+	width: 36px;
+	height: 50px;
+	vertical-align: middle;
+}

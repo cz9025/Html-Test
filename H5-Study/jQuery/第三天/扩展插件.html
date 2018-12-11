@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		
+		// 扩展一个普通的jQuery对象的方法
+		$.fn.log = function() {
+			console.log($(this).text());
+		}
+		
+		//给jQuery全局对象扩展一个方法
+		$.log = function() {
+			console.log(1234567);
+		}
+		$(function() {
+			$.log();
+			$("div").log();
+		})
+	</script>
+
+	<body>
+		<div>sdjlsjdf</div>
+	</body>
+
+</html>

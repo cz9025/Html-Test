@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				width: 300px;
+				border: 1px solid pink;
+				background-color: gainsboro;
+				margin: 100px;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			.qqList .nameGroup h2 {
+				font-size: 20px;
+				padding-left: 15px;
+				line-height: 40px;
+				background: greenyellow url(img/ico1.gif) no-repeat left 15px;
+				cursor: pointer;
+			}
+			
+			.nameList {
+				display: none;
+			}
+			
+			.nameList li {
+				font-size: 14px;
+				line-height: 30px;
+				padding-left: 10px;
+				border-bottom: 1px solid darkgray;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<ul class="qqList" id="qqList">
+				<li class="nameGroup">
+					<h2>我的好友</h2>
+					<ul class="nameList">
+						<li class="lis">朋友1</li>
+						<li class="lis">朋友2</li>
+						<li class="lis">朋友3</li>
+						<li class="lis">朋友3</li>
+					</ul>
+				</li>
+				<li class="nameGroup">
+					<h2>第一分组</h2>
+					<ul class="nameList">
+						<li class="lis">张三1</li>
+						<li class="lis">张三2</li>
+						<li class="lis">张三3</li>
+					</ul>
+				</li>
+				<li class="nameGroup">
+					<h2>陌生人</h2>
+					<ul class="nameList">
+						<li class="lis">王五</li>
+						<li class="lis">找刘</li>
+						<li class="lis">网吧</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var qqList = document.getElementById("qqList");
+	var nameGroup = document.getElementsByClassName("nameGroup");
+	var nameList = document.getElementsByClassName("nameList");
+
+	var h2 = document.getElementsByTagName("h2");
+
+	var lis = document.getElementsByClassName("lis");
+
+	for(var i = 0; i < h2.length; i++) {
+		h2[i].index = i;
+		h2[i].onclick = function() {
+			for(var i = 0; i < h2.length; i++) {
+				nameList[i].style.display = "none";
+				h2[i].style.backgroundImage = "url(img/ico1.gif)";
+				h2[i].style.backgroundColor = "greenyellow";
+			}
+			if(nameList[this.index].style.display == "block") {
+				nameList[this.index].style.display = "none";
+				this.style.backgroundImage = "url(img/ico1.gif)";
+				this.style.backgroundColor = "greenyellow";
+			} else {
+				nameList[this.index].style.display = "block";
+				this.style.backgroundImage = "url(img/ico2.gif)";
+				this.style.backgroundColor = "orange";
+			}
+
+		}
+
+	}
+
+	for(var i = 0; i < lis.length; i++) {
+		
+		lis[i].onclick = function() {
+			//当前点击的这个
+			//如果有背景颜色,则清除,
+			//如果没有,则先清除所有,再给自己添加
+
+			if(this.style.backgroundColor == "pink") {
+				
+				this.style.backgroundColor = "";
+			} else {
+				
+				for(var j = 0; j < lis.length; j++) {
+					lis[j].style.backgroundColor = "";
+				}
+				this.style.backgroundColor = "pink";
+			}
+		}
+	}
+</script>

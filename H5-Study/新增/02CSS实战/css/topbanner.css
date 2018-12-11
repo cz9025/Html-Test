@@ -1,0 +1,20 @@
+.topbanner{
+	background-color: #8A25C6;
+	
+}
+.topbanner .w{
+	position: relative;
+}
+.topbanner .gb{
+	display: inline-block;
+	height: 19px;
+	width: 19px;
+	background: url(../img/close.png) no-repeat;
+	position: absolute;
+	top: 6px;
+	right: 0;
+	
+}
+.topbanner .gb:hover{
+	background-position: bottom;
+}

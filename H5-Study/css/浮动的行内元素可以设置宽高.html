@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>浮动行内元素</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			span {
+				float: left;
+				width: 400px;
+				background-color: pink;
+				font-family: "microsoft yahei";
+				line-height: 1.5em;
+				letter-spacing: 2px;
+			}
+			
+			a {
+				float: left;
+				background-color: pink;
+				width: 40px;
+			}
+			
+			.box1 {
+				float: left;
+				background-color: yellow;
+			}
+			
+			.div_ovf {
+				clear: both;
+			}
+			
+			.h16 {
+				height: 16px;
+			}
+		</style>
+	</head>
+	<!--浮动的行内元素可以设置宽高-->
+
+	<body>
+		<div>
+			<span>风格如果豆腐干士大夫的是的的风格如果豆腐干士大夫的是的的风格如果豆腐
+			干士大夫的是的的风格如果豆腐干士大夫的是的的风格如果豆腐干士大夫的是的的风格如果豆腐干士大夫的是
+			的的风格如果豆腐干士大夫的是的的风格如果豆腐干士大夫的是的的风格如果豆腐干士大夫的是的的风格如果
+			豆腐干士大夫的是的的风格如果豆腐干士大夫的是的的风格如果豆腐干士大夫的是的的风格如果豆腐干士大夫
+			的是的的风格如果豆腐干士大夫的是的的风格如果豆腐干士大夫的是的的风格如果豆腐干士大夫的是的的风格
+			如果豆腐干士大夫的是的的风格如果豆腐干士大夫</span>
+		</div>
+		<div class="div_ovf h16"></div>
+		<div>
+			<a href="#">看我可以设置宽高了吗</a>
+		</div>
+		<div class="div_ovf h16"></div>
+		<div class="box1">
+			div里面的文字，浮动了，且没有设置宽度，那么将自动缩紧为内容的宽度
+		</div>
+
+	</body>
+
+</html>

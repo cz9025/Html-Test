@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>margin坍塌</title>
+		<style type="text/css">
+			.box1 {
+				background-color: pink;
+				width: 300px;
+				height: 200px;
+				margin-bottom: 20px;
+			}
+			/*这个外边距会覆盖掉上面的那个，外边距以宽的那个为准*/
+			
+			.box2 {
+				background-color: pink;
+				width: 300px;
+				height: 200px;
+				margin-top: 100px;
+			}
+			
+			.mains {
+				width: 500px;
+				height: 300px;
+				overflow: hidden;
+				border: 1px dashed red;
+			}
+			.box3{
+				float: left;
+				width: 100px;
+				height: 100px;
+				background-color: skyblue;
+				margin-right: 20px;
+				
+			}
+			.box4{
+				float: left;
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				margin-left: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<p>下面的浮动的盒子，浮动没有坍塌现象</p>
+		<div class="mains">
+			<div class="box3"></div>
+			<div class="box4"></div>
+		</div>
+	</body>
+
+</html>

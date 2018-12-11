@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自动跳转页面</title>
+	</head>
+	<body>
+		<span>页面不存在,即将自动跳转</span><a href='http://www.baidu.com'>立即跳转到首页</a>
+		<p id="txt"></p>
+		<script type="text/javascript">
+			var txt=document.getElementById("txt");
+			var count=5;
+			setTimeout(fn,1000);
+			function fn(){
+				count--;
+				txt.innerHTML="还有"+count+"秒自动跳转页面  ";
+				if(count<=0){
+					window.location.href="http://www.baidu.com";
+				}else{
+					setTimeout(fn,1000);
+				}
+			}
+		</script>
+	</body>
+</html>

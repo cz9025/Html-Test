@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--1477386005000    2016 10 25 17 0 5--> 
+		<p id="txt"></p>
+		<script type="text/javascript">
+			var date=new Date();
+			date.setTime("1477386005000");
+			
+			var year=date.getFullYear();
+			var mon=date.getMonth()+1;
+			var day=date.getDate();
+			var hour=date.getHours();
+			var min=date.getMinutes();
+			var sec=date.getSeconds();
+			
+			document.getElementById("txt").innerHTML=year+" "+mon+" "+day+" "+hour+" "+min+" "+sec;
+		</script>
+	</body>
+</html>

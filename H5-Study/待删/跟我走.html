@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				width: 50px;
+				height: 50px;
+				background-color: blue;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script type="text/javascript">
+			var x = 0,
+				y = 0;
+			document.onclick = function(event) {
+				//图片停留在鼠标的中间位置
+				targetx= event.clientX-box.offsetWidth/2;  
+				targety = event.clientY-box.offsetHeight/2;
+				
+			}
+			var box = document.getElementById("box");
+			
+			var leaderx=0,leadery=0,targetx=0,targety=0;
+			setInterval(function(){
+				leaderx=leaderx+(targetx-leaderx)/10;
+				leadery=leadery+(targety-leadery)/10;
+				box.style.left = leaderx + "px";
+				box.style.top = leadery + "px";
+			},10);
+		</script>
+	</body>
+
+</html>

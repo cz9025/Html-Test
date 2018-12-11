@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>接口测试</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				outline-style: none;
+			}
+			
+			section {
+				overflow: hidden;
+				margin-top: 30px;
+			}
+			
+			.content {
+				width: 1000px;
+				margin: 50px auto;
+			}
+			
+			.type {
+				height: 39px;
+				padding: 8px;
+				float: left;
+				cursor: pointer;
+			}
+			/*.type option{
+				height: 39px;
+				font-size: 14px;
+				padding: 8px;
+				
+			}*/
+			
+			#url {
+				float: left;
+				width: 400px;
+				padding: 5px;
+				line-height: 25px;
+				font-size: 14px;
+				margin-left: -1px;
+				color: #56688a;
+			}
+			
+			#submit,
+			#addargs,
+			#headers {
+				float: left;
+				margin-left: 15px;
+				height: 39px;
+				width: 80px;
+				line-height: 39px;
+				font-size: 14px;
+				color: #FFFFFF;
+				background-color: #55a7e3;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			
+			#addargs,
+			#headers {
+				float: none;
+			}
+			
+			#submit:hover {
+				background-color: #2f87c1;
+			}
+			
+			.text {
+				width: 228px;
+				padding: 5px;
+				line-height: 25px;
+				font-size: 14px;
+				color: #56688a;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	</head>
+
+	<body>
+		<header class="content">
+			<section class="totest">
+				<select class="type">
+					<option value="1">GET</option>
+					<option value="2">POST</option>
+				</select>
+
+				<input type="text" name="url" id="url" placeholder="输入要测试的地址" />
+				<input type="button" id="submit" value="提交测试" />
+
+			</section>
+			<!--<section class="headers">
+				<input type="text" name="url" id="" placeholder="参数名" class="text" />
+				<input type="text" name="url" id="" placeholder="值" class="text" />
+				<input type="button" id="headers" value="添加头" />
+			</section>-->
+			<section class="args">
+
+				<input type="text" name="url" id="" placeholder="参数名" class="text" />
+				<input type="text" name="url" id="" placeholder="值" class="text" />
+				<input type="button" id="addargs" value="添加参数" />
+			</section>
+
+			<section id="result">
+
+			</section>
+		</header>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			
+			$("#submit").click(function(){
+				selectrequest("1","./test.php","");
+			});
+
+
+			function selectrequest(type, url, arg) {
+				if(type == "1") {
+					getRequest(url, arg);
+				} else if(type == "2") {
+					postRequest(url, arg);
+				}
+			}
+
+			function getRequest(url, arg) {
+				$.ajax({
+					url:url,
+					type:"GET",
+					async:true,
+					success:function(data){
+						alert(data);
+					}
+				});
+			}
+
+			function postRequest(url, arg) {
+				alert("待开发中。。。");
+			}
+		});
+	</script>
+
+</html>

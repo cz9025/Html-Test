@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="file" name="file" id="fil" value="" />上传
+		
+		<script type="text/javascript">
+			var fil=document.getElementById("fil");
+			fil.onchange=function(){
+				var va=this.value;
+				
+				var ge=va.substr(va.lastIndexOf(".")).toUpperCase();
+				if(ge=="JPG"){
+					alert(11);
+				}
+				else{
+					alert(22);
+				}
+			}
+		</script>
+	</body>
+</html>

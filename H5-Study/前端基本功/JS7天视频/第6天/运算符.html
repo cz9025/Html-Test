@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//逻辑与，只要有0则为0，左边为真，结果看右边的
+			var aa = 0 && 1; //0
+			console.log(aa);
+			var bb = 1 && 0; //0
+			console.log(bb);
+			var cc = 1 && 10; //10
+			console.log(cc);
+			
+			//逻辑或，左边为真，输出为左边的；左边的为假，则输出右边的
+			console.log(0 || 1); //1
+			console.log(1 || 0); //1
+			console.log(1 || 5); //1
+			console.log(5 || 1); //5
+
+			
+			var a = 1 && 2 && 3; //3
+			console.log(a); 
+			var b = 0 && 1 && 2; //0
+			console.log(b); 
+			var c = 1 && 0 && 2; //0
+			console.log(c); 
+		</script>
+	</body>
+
+</html>

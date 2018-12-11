@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				margin-top: 20px;
+				width: 400px;
+				height: 500px;
+				overflow-y: scroll;
+				font:14px/28px "microsoft yahei";
+				border: 1px solid gray;
+				background-color: pink;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="txt" id="txt" value="9025" />
+		<input type="button" name="btn" id="btn" value="查询" />
+		<div id="box">
+			<ul id="ul">
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var txt=document.getElementById("txt");
+			var btn=document.getElementById("btn");
+			var ul=document.getElementById("ul");
+			
+			btn.onclick=function(){
+				
+				var xhr=new XMLHttpRequest();
+				
+				//加个时间戳,可以避免缓存
+				xhr.open("GET","ems.php?code="+txt.value+"&_="+new Date().getTime());
+				xhr.send();
+				xhr.onreadystatechange=function(){
+					if(this.readyState==4){
+						if(this.status==200){
+							
+							var json=JSON.parse(this.responseText);
+							if(json.status=="0"){
+								ul.innerHTML="";
+//								console.log(json.data.info.context);
+								
+								var arr=json.data.info.context;
+								var ms="";
+								var con="";
+								var li=null;
+								var t=new Date();
+								for(var i=0;i<arr.length;i++){
+									//时间要处理下
+									ms=arr[i].time;
+									t.setTime(ms+"000");
+									var time=t.getFullYear()+"年"+(t.getMonth()+1)+"月"+t.getDate()+"日  "+(t.getHours()<10?"0"+t.getHours():t.getHours())+":"+(t.getMinutes()<10?"0"+t.getMinutes():t.getMinutes())+":"+(t.getSeconds()<10?"0"+t.getSeconds():t.getSeconds());
+									con=arr[i].desc;
+									li=document.createElement("li");
+									li.innerHTML=time+"<br/>"+con;
+									ul.appendChild(li);
+								}
+								
+								
+							}
+						}
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

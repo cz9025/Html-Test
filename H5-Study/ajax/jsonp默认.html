@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"ajax.php",
+					async:true,
+//					dataType:"jsonp",
+//					jsonp: 'jsoncallback',
+//					jsonCallback:'callback',
+					success:function(data){
+						console.log(data);
+					},
+					error:function(e){
+						console.log(e);
+					}
+				});
+				
+				
+			});
+//			function callback(data){
+//					console.log(data);
+//				}
+		</script>
+	</body>
+</html>

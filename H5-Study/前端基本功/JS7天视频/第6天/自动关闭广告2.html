@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自动关闭广告2</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 500px;
+				height: 100px;
+				background-color: pink;
+				position: relative;
+				margin: 100px;
+			}
+			#close{
+				display: inline-block;
+				height: 20px;
+				width: 20px;
+				background-color: gray;
+				color: white;
+				line-height: 20px;
+				text-align: center;
+				cursor: pointer;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>
+				5秒后会自动关闭
+			</span>
+			<span id="close">X</span>
+		</div>
+		<script type="text/javascript">
+			function $(id){
+				return document.getElementById(id);
+			}
+			
+			function hide(id){
+				$(id).style.display="none";
+			}
+			//5秒后自动关闭，，，只会执行一次
+			setTimeout(fn,5000);
+			function fn(){
+				hide("box");
+			}
+			//点击关闭按钮
+			$("close").onclick=function(){
+				this.parentElement.style.display="none";
+			}
+		</script>
+	</body>
+</html>

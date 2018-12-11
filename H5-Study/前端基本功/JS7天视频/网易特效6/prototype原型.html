@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function person(name, age){
+				this.name=name;
+				this.age=age;
+			}
+			
+			person.prototype.shownamw=function(){
+				alert(this.name);
+			}
+			person.prototype.showage=function(){
+				alert(this.age);
+			}
+			
+			var p = new person("cz",90);
+			
+			p.showage();
+			
+			console.log(p.name);
+		</script>
+	</body>
+</html>

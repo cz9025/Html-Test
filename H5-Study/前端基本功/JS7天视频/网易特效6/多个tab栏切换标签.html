@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多个tab栏切换标签</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				margin: 100px;
+				width: 500px;
+				height: 200px;
+				
+				border: 1px solid gray;
+			}
+			.nav{
+				width: 100%;
+				height: 50px;
+				
+			}
+			ul{
+				list-style: none;
+			}
+			.nav ul li{
+				float: left;
+				height: 50px;
+				width: 100px;
+				line-height: 50px;
+				color: white;
+				font-size: 16px;
+				text-align: center;
+				cursor: pointer;
+				background-color: pink;
+			}
+			.content{
+				width: 100%;
+				height: 150px;
+				overflow: hidden;
+				position: relative;
+			}
+			.content ul{
+				width: 1000%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+			}
+			.content ul li{
+				float: left;
+				width: 500px;
+				height: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="nav" id="nav">
+				<ul>
+					<li>时尚</li>
+					<li>时尚</li>
+					<li>时尚</li>
+					<li>时尚</li>
+					<li>时尚</li>
+				</ul>
+			</div>
+			<div class="content" id="content">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		//标签
+		var nav=document.getElementById("nav");
+		var nuli=nav.children[0].children;
+		
+		//内容
+		var content=document.getElementById("content");
+		var cul=content.children[0];
+		var culi=cul.children;
+		
+		var arr=["purple","blue","red","orange","gray"];
+		culi[0].style.backgroundColor=arr[0];
+		
+		for(var i=0;i<culi.length;i++){
+			culi[i].style.backgroundColor=arr[i];
+			
+//			nuli[i].onmouseover=function(num){
+//				
+//				return function(){
+//					
+//					cul.style.left=-num*500+"px";
+//				}
+//				
+//			}(i);
+			
+			nuli[i].onmouseover=abc(i);
+		}
+		
+		
+		function  abc(num){
+				
+				return function(){
+					
+					cul.style.left=-num*500+"px";
+				}
+				
+			}
+	</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<ul class="uls">
+			<li>很多同门1</li>
+			<li>很多同门2</li>
+			<li>很多同门3</li>
+			<li>很多同门4</li>
+			<li>很多同门5</li>
+			<li>很多同门6</li>
+			<li>很多同门7</li>
+			<li>很多同门8</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".uls li").each(function(index, ele){
+				console.log(index);
+				$(ele).css({"color":"pink","height":"50"})
+			})
+			
+		});
+	</script>
+</html>

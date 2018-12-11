@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>缓动动画</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				top: 50px;
+				left: 0;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<button id="btn">走起来啊</button>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			var btn=document.getElementById("btn");
+			var box=document.getElementById("box");
+			
+			var target=400;
+			var timer=0;
+			btn.onclick=function(){
+				
+				timer=setInterval(function(){
+					var step=(target-box.offsetLeft)/10;
+					step=step>0? Math.ceil(step):Math.floor(step);
+					if(step==0){
+						clearInterval(timer);
+						//可以让他来回跑
+//						if(target==0){
+//							target=400;
+//						}else{
+//							target=0;
+//						}
+					}
+					box.style.left=box.offsetLeft+step+"px";
+				},30)
+				
+			}
+		</script>
+	</body>
+</html>

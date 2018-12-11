@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<span id="box"></span>
+		<input type="button" id="btn" value="按钮" />
+		<div id="divs"></div>
+		<script type="text/javascript">
+			$(function(){
+				$("#box").text(new Date().getTime());
+				
+				$("#btn").click(function(){
+					$.ajax({
+						type:"get",
+						url:"ajax.php",
+						async:true,
+						success:function(data){
+							$("#divs").text(data);
+						},
+						error:function(e){
+							console.log(e);
+						}
+					});
+				});
+				
+			});
+		</script>
+	</body>
+</html>

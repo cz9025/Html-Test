@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function person(name,age){
+				this.name=name;
+				this.age=age;
+				
+				this.showname=function(){
+					alert(name);
+				}
+				this.showage=function(){
+					alert(age);
+				}
+				
+			}
+			
+			var per=new person("li",14);
+			console.log(per.name);
+			console.log(per.age);
+			
+			per.showname();
+			per.showage();
+		</script>
+	</body>
+</html>

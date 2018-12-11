@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>查询的</title>
+	</head>
+	<body>
+		<input type="text" id="con" value="请输入..."/>
+		<button type="button" id="btn">提交</button>
+		<script type="text/javascript">
+			function $(id){
+				return document.getElementById(id);
+			}
+			$("btn").onclick=function(){
+				if($("con").value=="cz"){
+					alert("ok");
+				}else{
+					alert("NG");
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>兄弟节点</title>
+		<style type="text/css">
+			div {
+				height: 200px;
+				width: 200px;
+				border: 1px solid gray;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="box1" id="yi">
+			<span>1</span><span>2</span>
+		</div>
+		<div class="box2" id="box"></div>
+
+		<div class="box3" id="box3">
+			<!--//插入节点，删除节点；克隆节点-->
+		</div>
+
+		<script type="text/javascript">
+			var box = document.getElementById("box");
+			//第一个兼容高级浏览器，第二个兼容低版本浏览器
+			var borth = box.nextElementSibling || box.nextSibling;
+			borth.style.backgroundColor = "skyblue";
+
+			//
+			//第一个孩子
+			var yi = document.getElementById("yi");
+			yi.firstElementChild.innerHTML = "123456";
+
+			//			创建节点
+			var ch = document.createElement("div");
+			ch.className = "ss";
+			//			添加节点
+			var box3 = document.getElementById("box3");
+			box3.appendChild(ch);
+
+			box.appendChild(box3.cloneNode(false))
+			//			移除节点
+			box3.removeChild(ch)
+		</script>
+	</body>
+
+</html>

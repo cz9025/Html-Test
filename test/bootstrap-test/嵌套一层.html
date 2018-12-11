@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<title>嵌套使用</title>
+		<style type="text/css">
+			.rr div{
+				border: dashed 1px blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row rr">
+				<div class="col-md-4">
+					<span id="t">
+						第一列第一行的内容
+					</span>
+				</div>
+				<div class="col-md-8">
+					<span>把第二列分开</span>
+					
+					<div class="row">
+						<div class="col-sm-6">
+							2-1-1
+						</div>
+						<div class="col-sm-6">
+							2-1-2
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-sm-6">
+							2-2-1
+						</div>
+						<div class="col-sm-6">
+							2-2-2
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

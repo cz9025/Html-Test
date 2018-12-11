@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Per(fruit){
+				this.fruit=fruit;
+				this.fn=function(){
+					console.log(this.fruit);
+				}
+			}
+			
+			var per= new Per("ORANGE");
+			per.fn();
+			
+			console.log(per.fruit);
+			
+			
+		</script>
+	</body>
+</html>

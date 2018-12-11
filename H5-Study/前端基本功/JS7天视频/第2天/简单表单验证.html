@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>验证表单</title>
+		<style type="text/css">
+			span {
+				display: inline-block;
+				width: 150px;
+				height: 20px;
+				border: 1px solid #ccc;
+				font-size: 12px;
+				line-height: 20px;
+				text-align: left;
+				padding-left: 20px;
+				background-color: #eee;
+				color: #999;
+			}
+			.right{
+				color: #5E5E5E;
+				background: url(img/right.png) no-repeat #DFFFDF 4px 3px;
+				border: 1px solid #acffac;
+			}
+			.wrong{
+				background: url(img/wrong.png) no-repeat #FFDCD0 4px 3px;
+				border: 1px solid #ffac91;
+				color: #ff6b39;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<input type="text" id="score" /> <span id="result">请输入成绩</span>
+		<!--应该是要点击按钮时才做判断，而不是输入框失去焦点就判断，-->
+		<script type="text/javascript">
+			function $(id){return document.getElementById(id);}
+			
+				$("result").onclick=function(){
+					if($("score").value==""){
+						this.className="wrong";
+						this.innerHTML="请输入成绩";
+					}else if(isNaN($("score").value)){
+						this.className ="wrong";
+                    	this.innerHTML = "请输入数字思密达";
+					}else if($("score").value>150 || $("score").value<0){
+						this.className="wrong";
+						this.innerHTML="请输入合理的成绩";
+					}else{
+						this.className="right";
+						this.innerHTML="输入正确";
+					}
+				}
+		</script>
+
+	</body>
+
+</html>

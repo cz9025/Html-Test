@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				float: left;
+				height: 100px;
+			}
+			.left{
+				background: url(img/l.png) no-repeat;
+			}
+			.m{
+				background: url(img/m.png) repeat-x;
+				line-height: 100px;
+			}
+			.r{
+				background: url(img/r.png) no-repeat;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				float: left;
+				height: 20px;
+				background: url(img/bg_r1_c1.png) left;
+				padding-left: 7px;
+			}
+			
+			a{
+				text-decoration: none;
+				color: blue;
+			}
+			span{
+				float: left;
+				background: url(img/bg_r1_c2.png) right;
+				height: 20px;
+				line-height: 20px;
+				padding-right: 25px;
+			}
+			li:hover{
+				background: url(img/blue_r1_c1.png) left;
+				
+				}
+				li:hover span{
+				background: url(img/blue_r1_c2.png) right;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="nav">
+			<div class="left"></div>
+			<div class="m">我也知道的沙发上看得上发发</div>
+			<div class="r"><img src="img/r.png"/></div>
+		</div>
+		<div id="hand_right" style="height: 1;">
+			
+		</div>
+		<ul>
+			<li><a href="#"><span id="txt">发的是根深蒂固</span></a></li>
+			<li><a href="#"><span id="txt">挂号费</span></a></li>
+			<li><a href="#"><span id="txt">地方各地方的</span></a></li>
+		</ul>
+	</body>
+</html>

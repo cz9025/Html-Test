@@ -1,0 +1,7 @@
+.gamebanner{
+	height: 254px;
+	background: url(../img/game/gamebanner.jpg) no-repeat center center;
+}
+.news_t{
+	background-position: 0 -92px;
+}

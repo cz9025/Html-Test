@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="测试按钮" />
+		
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("input[name='btn']").css("background-color","#000080");
+			
+			$("input[id='btn']").css("color","orange");
+			
+			//选择属性name以b开头的  $结尾   *包含
+			$("input[name^='b']").css("border-radius","5px");
+		});
+	</script>
+</html>

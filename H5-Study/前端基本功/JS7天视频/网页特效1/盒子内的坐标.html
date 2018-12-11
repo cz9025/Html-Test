@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>求盒子内的坐标</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				height: 400px;
+				width: 400px;
+				background-color: pink;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<!--求鼠标在盒子的范围内的坐标-->
+		<script type="text/javascript">
+			var box= document.getElementById("box");
+			var x=0,y=0;
+			box.onmousemove=function(event){
+				x=event.clientX-this.offsetLeft;
+				y=event.clientY-this.offsetTop;
+				this.innerHTML=x+"px,"+y+"px";
+			}
+		</script>
+	</body>
+</html>

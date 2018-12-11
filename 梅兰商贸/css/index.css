@@ -1,0 +1,274 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+ul{
+	list-style: none;
+	
+}
+.container{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+
+/*顶部开始*/
+.top{
+	height: 27px;
+	line-height: 27px;
+	background: #F7F7F7;
+	border-bottom: solid 1px darkgrey;
+	overflow: hidden;
+}
+
+.tleft{
+	font-size: 12px;
+	float: left;
+}
+.tright{
+	float: right;
+}
+ .tright li{
+ 	float: left;
+ 	padding: 0 10px;
+ 	background: url(../img/sj.png) no-repeat right center;
+}
+.tright li a{
+	font-size: 12px;
+	color: black;
+}
+/*顶部结束*/
+
+/*搜索部分*/
+.search{
+	overflow: hidden;
+}
+.search img{
+	float: left;
+}
+.search .sos{
+	float: right;
+	width: 520px;
+	height: 30px;
+	padding: 5px;
+	border: solid 1px darkgrey;
+	margin-top: 28px;
+	background: #F9F9F9;
+}
+.search .sos input.text{
+	float: left;
+	width: 419px;
+	height: 28px;
+	border: solid 1px darkgrey;
+	outline-style: none;
+}
+.search .sos img{
+	float: left;
+	width: 99px;
+	height: 30px;
+	border: none;
+}
+/*搜索结束*/
+.tab{
+	border-bottom: solid 2px darkblue;
+	height: 25px;
+	margin: 10px 0px;
+}
+.tab li{
+	float: left;
+	font-size: 14px;
+	padding: 0 15px;
+	color: #0266a3;
+}
+
+
+/*首页部分开始*/
+.souye{
+	overflow: hidden;
+}
+.souye .sleft{
+	float: left;
+	width: 200px;
+	height: 210px;
+	background: #EBF0F6;
+}
+.souye .sleft li{
+	line-height: 28px;
+	
+	padding-left: 40px;
+	background: url("../img/icon_1.png") no-repeat 9px;
+}
+.souye .sleft a{
+	color: black;
+	font-size: 14px;
+}
+.souye .sleft .stitle{
+	background: #0266a3;
+	color: white;
+	line-height: 30px;
+	padding-left: 20px;
+}
+.souye .scenter{
+	float: left;
+}
+.souye .sright img{
+	float: right;
+	margin-bottom: 12px;
+}
+
+/*首页部分结束*/
+
+/*建筑材料开始*/
+.jztext{
+	height: 34px;
+	font-size: 14px;
+	padding-left: 20px;
+	line-height: 34px;
+	font-weight: 700;
+	margin: 15px 0;
+	background: #ECF1F7;
+	border-top: #C3D7E4 2px solid;
+}
+.jzcl .jcenter{
+	overflow: hidden;
+}
+.jzcl .jleft{
+	float: left;
+	width: 715px;
+	height: 314px;
+	border: solid 1px darkgrey;
+	padding: 15px;
+}
+.jzcl .jleft .jshop{
+	float: left;
+	margin: 10px;
+	width: 328px;
+	height: 142px;
+}
+.jzcl .jleft .jshop .jl{
+	float: left;
+	width: 97px;
+}
+.jzcl .jleft .jshop .jl .gg{
+	height: 100px;
+	border: 1px solid #CACACA;
+}
+.jzcl .jleft .jshop .jl .mg{
+	
+	margin-left: 3px;
+	margin-top: 18px;
+	width: 90px;
+	height: 63px;
+}
+.jzcl .jleft .jshop .jl .buy{
+	margin-top: 15px;
+}
+
+.jzcl .jleft .jshop .jr{
+	float: right;
+	width: 220px;
+	height: 141px;
+	font-size: 14px;
+}
+
+.jzcl .jleft .jshop .jr .jpices{
+	color: red;
+}
+.jzcl .jleft .jshop .jr .pa,.jzcl .jleft .jshop .jr .pb{
+	margin-bottom: 10px;
+}
+.jzcl .jleft .jshop .jr .pd{
+	margin-top: 30px;
+}
+.jzcl .jright{
+	float: right;
+	width: 248px;
+	height: 344px;
+	border: solid 1px darkgrey;
+}
+.jzcl .jright .jrtext{
+	background: #FBFBFB;
+	height: 28px;
+	line-height: 28px;
+	padding-left: 15px;
+	border-bottom: 1px solid #E0E6F0;
+}
+.jzcl .jright ul{
+	margin-top: 10px;
+}
+.jzcl .jright li{
+	padding-left: 25px;
+	height: 24px;
+	background: url("../img/li_bg.png") no-repeat 10px 9px;
+}
+.jzcl .jright a{
+	font-size: 14px;
+	line-height: 24px;
+}
+.jzcl .jright a:hover{
+	text-decoration: underline;
+	color: red;
+}
+
+/*儿童安全座椅*/
+
+.chrild{
+	overflow: hidden;
+}
+.chrild .cleft{
+	float: left;
+	width: 722px;
+}
+.chrild .cleft .cleftop{
+	height: 25px;
+	border-bottom: 2px solid #00B0E7;
+}
+.chrild .cleft .cleftop .xx{
+	float: right;
+	color: #00B0E7;
+	font-weight: 700;
+}
+.chrild .cleft .cleftbm{
+	text-align: center;
+	border: 1px solid #CACACA;
+	height: 301px;
+	font-size: 12px;
+	padding: 10px;
+}
+.chrild .cleft .cleftbm li{
+	float: left;
+	margin: 5px
+}
+.chrild .cleft .cleftbm .c{
+	margin-top: 9px;
+	height: 43px;
+}
+
+.chrild .cleft .cleftbm .cc{
+	color: #999;
+	height: 24px;
+}
+
+.chrild .cleft .cleftbm .r{
+	color: red;
+}
+.chrild .cright img{
+	border: solid 1px darkgrey;
+	float: right;
+	margin:  15px;
+	
+}
+.zz{
+	overflow: hidden;
+	padding: 10px;
+	font-size: 12px;
+}
+.zz img{
+	float: left;
+	margin-right: 8px;
+		
+}

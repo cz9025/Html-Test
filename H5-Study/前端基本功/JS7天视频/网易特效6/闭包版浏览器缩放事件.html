@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="txt"></div>
+		
+		<script type="text/javascript">
+			var txt=document.getElementById("txt");
+			var num=0;
+			window.onresize= delay(function(){//让他延时一段时间再执行
+				num++;
+				txt.innerHTML=window.innerWidth;
+				console.log(num);
+			},300);
+			
+			function delay(fn,t){
+				var timer=null;
+				return function(){
+					clearTimeout(timer);
+				
+					timer=setTimeout(fn,t);
+				}
+				
+			}
+		</script>
+	</body>
+</html>

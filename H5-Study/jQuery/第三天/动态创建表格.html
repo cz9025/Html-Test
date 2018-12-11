@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			table {
+				/*边框折叠*/
+				border-collapse: collapse;
+				/*边框间距*/
+				border-spacing: 0;
+				border: 1px solid #c0c0c0;
+			}
+			
+			th,
+			td {
+				border: 1px solid #d0d0d0;
+				color: #404060;
+				padding: 10px;
+			}
+			
+			th {
+				background-color: #09c;
+				font: bold 16px "微软雅黑";
+				color: #fff;
+			}
+			
+			td {
+				font: 14px "微软雅黑";
+			}
+			
+			tbody tr {
+				background-color: #f0f0f0;
+			}
+			
+			tbody tr:hover {
+				cursor: pointer;
+				background-color: #fafafa;
+			}
+		</style>
+	</head>
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var data = [{
+			name: "传智播客",
+			url: "http://www.itcast.cn",
+			type: "IT最强培训机构"
+		}, {
+			name: "黑马程序员",
+			url: "http://www.itheima.com",
+			type: "大学生IT培训机构"
+		}, {
+			name: "传智前端学院",
+			url: "http://web.itcast.cn",
+			type: "前端的黄埔军校"
+		}];
+
+		$(function() {
+
+			var strhtml = "";
+			for(var i = 0; i < data.length; i++) {
+				console.log(data[i].name);
+				strhtml += "<tr>";
+				strhtml += "<td>" + data[i].name + "</td>";
+				strhtml += "<td>" + data[i].url + "</td>";
+				strhtml += "<td>" + data[i].type + "</td>";
+				strhtml += "</tr>";
+			}
+			$("#tb").html(strhtml);
+		});
+	</script>
+
+	<body>
+		<table>
+			<thead>
+				<th>名称</th>
+				<th>地址</th>
+				<th>描述</th>
+			</thead>
+			<tbody id="tb">
+
+			</tbody>
+		</table>
+	</body>
+
+</html>

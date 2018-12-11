@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function outfun(num){
+				return function(){
+					console.log(num);
+				}
+			}
+			
+			var fun=outfun(5);
+			fun();
+		</script>
+	</body>
+</html>

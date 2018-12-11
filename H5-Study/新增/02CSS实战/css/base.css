@@ -1,0 +1,41 @@
+*{
+	margin: 0;
+	padding: 0;
+	
+
+}
+body{
+	color: #666;
+	font-size: 12px;
+	font-family: Arial, Verdana, "\5b8b\4f53";
+	/*height: 3000px;*/
+}
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a{
+	text-decoration: none;
+	color: #666;
+}
+ul,ol{
+	list-style: none;
+}
+li{
+	float: left;
+}
+img,input,button{
+	vertical-align: middle;border: 0;outline-style: none;
+}
+/*版心*/
+.w{
+	width: 1210px;margin:0 auto;
+}
+
+.red{
+	color: #C81623;
+}

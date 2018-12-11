@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<button class="btn1">显示</button>
+		<button class="btn2">隐藏</button>
+		<button class="btn3">淡入</button>
+		<button class="btn4">淡出</button>
+		<button class="btn5">淡入淡出</button>
+		<button class="btn6">下拉</button>
+		<button class="btn7">上拉</button>
+		<button class="btn8">上xia拉</button>
+		<div class="dp"><p class="hh">呵呵呵</p></div>
+		<div class="box" ></div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".box").css({"width":"300","height":"300","background":"blue"})
+		});
+		
+		$(".btn1").click(function(){
+			$(".box").show(2000,function(){
+				alert("运行完成")
+			});
+		});
+		$(".btn2").click(function(){
+			$(".box").hide(2000);
+		});
+		$(".btn3").click(function(){
+			$(".box").fadeIn(2000);
+		})
+		$(".btn4").click(function(){
+			$(".box").fadeOut(2000);
+		})
+		$(".btn5").click(function(){
+			$(".box").fadeToggle(2000);
+		})
+		$(".btn6").click(function(){
+			$(".box").slideDown(2000);
+		})
+		$(".btn7").click(function(){
+			$(".box").slideUp(2000);
+		})
+		$(".btn8").click(function(){
+			$(".box").slideToggle(2000);
+		})
+		alert($(".dp").text())
+		
+	</script>
+</html>

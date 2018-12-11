@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+    <style>
+ 
+    </style>
+</head>
+
+<body>
+<div id="box"></div>
+
+<select  id="se" multiple size="5" style="width: 100px;">
+	<option value="1">兄弟1</option>
+	<option value="2">兄弟2</option>
+	<option value="3">兄弟3</option>
+	<option value="4">兄弟4</option>
+	<option value="5">兄弟5</option>
+</select>
+
+<input type="button" name="goout" id="gout" value="调调" />
+<select id="so" size="5" style="width: 100px;">
+</select>
+</body>
+<script type="text/javascript">
+	var box=document.getElementById("box");
+	var sp=document.createElement("span");
+	sp.innerText="123"
+	box.appendChild(sp);
+	
+	
+	var se=document.getElementById("se").options;
+	
+	var gout=document.getElementById("gout");
+	var so=document.getElementById("so");
+	
+	gout.onclick=function(){
+		for (var i=0;i<se.length;i++) {
+			if(se[i].selected){
+				so.appendChild(se[i]);
+				i--;
+			}
+		}
+	}
+	
+	
+	var xhr=new XMLHttpRequest();
+	
+	xhr.open('GET','a.php',true);
+	
+	xhr.send(null);
+	
+	xhr.onreadystatechange= function(){
+		if(xhr.readyState==4){
+			if(xhr.status==200){
+				console.log("完全O鸡吧K");
+				var s=xhr.responseText;
+			}
+		}
+	}
+	
+</script>
+</html>

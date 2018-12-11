@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+
+	<head>
+		<meta charset="UTF-8">
+		
+		<script src="../js/jquery-1.11.1.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#btn1").click(function() {
+					$(this).before("<b>Before</b>");
+				});
+
+				$("#btn2").click(function() {
+					$("img").after("<i>After</i>");
+				});
+				$("#btn3").click(function(){
+					$("p").after("<b>  66666666  </b>");
+				})
+			});
+		</script>
+	</head>
+
+	<body>
+		<img src="/i/eg_w3school.gif" alt="W3School Logo" />
+		<p id="p">123678</p>
+		<br><br>
+		<button id="btn1">在图片前面添加文本</button>
+		<button id="btn2">在图片后面添加文本</button>
+		<button id="btn3">在p后面添加</button>
+	</body>
+
+</html>

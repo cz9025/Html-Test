@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<!--没做完-->
+	<body>
+		<label for="city"><input type="text" name="city" id="city" value="9025" /></label>
+		<input type="button" name="btn" id="btn" value="直接查询" />
+		<div class="box">
+			<select name="sheng" id="sheng">
+				
+			</select>
+			<select name="shi" id="shi">
+				
+			</select>
+			<select name="qu" id="qu">
+				
+			</select>
+		</div>
+		
+		<script type="text/javascript">
+			var city=document.getElementById("city");
+			var btn=document.getElementById("btn");
+			var sheng=document.getElementById("sheng");
+			var shi=document.getElementById("shi");
+			var qu=document.getElementById("qu");
+			
+			//存放所有的二级市和三级区
+			var js={};
+			
+			btn.onclick=function(){
+				var xhr=new XMLHttpRequest();
+			
+				xhr.open("GET","allCitys.php?city="+city.value);
+				
+				xhr.send();
+				
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4){
+						//请求成功
+						if(xhr.status==200){
+							
+							var str=JSON.parse(this.responseText);
+							var option="";
+							var shiall="";
+							
+							if(str.status=="10000"){
+								var content=str.content;
+								
+								for(var i=0;i<content.length;i++){
+//									console.log(content[i]);
+									//省的值
+									option+='<option value="'+content[i].value+'">'+content[i].text+ '</option>';
+									
+									js[content[i].value]=content[i].children;
+			
+								}
+								sheng.innerHTML=option;
+								
+								//这样能获得第二级的市
+								//console.log(js[content[0].text][0].text);
+//								console.log(js["130000"]);
+								//得到所选省的value值
+								
+							}
+							
+						}
+					}
+				}
+				
+				
+			}
+			
+			//省份有改动时
+			sheng.onchange=function(){
+//				console.log(js);
+//				console.log(js[this.value]);
+				var option= getCity(js,this.value);
+				shi.innerHTML=option;
+				
+			}
+			
+			//市级有改动时
+			shi.onchange=function(){
+				var shijs={};
+				var shiarr=js[sheng.value];
+				
+				for(var i=0;i<shiarr.length;i++){
+					//	
+					shijs[shiarr[i].value]=shiarr[i].children;
+			
+				}
+				var option= getCity(shijs,this.value);
+				qu.innerHTML=option;
+				
+			}
+			
+			//通过当前选中的value获得下面的
+			function getCity(obj,num){
+				var arr=obj[num];
+				var option="";
+				for(var i=0;i<arr.length;i++){
+					option+='<option value="'+arr[i].value+'">'+arr[i].text+ '</option>';
+				}
+				
+				return option;
+			}
+			
+		</script>
+	</body>
+</html>
+
+
+//还有一些BUG要调试

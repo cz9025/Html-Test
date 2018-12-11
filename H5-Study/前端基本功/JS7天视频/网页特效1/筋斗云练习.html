@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>筋斗云</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color: gray;
+			}
+			.box{
+				width: 1000px;
+				height: 42px;
+				background: url(img/rss.png) no-repeat right center #FFFFFF;
+				margin: 100px auto;
+				position: relative;
+			}
+			ul{
+				list-style: none;
+				position: relative;
+			}
+			li{
+				float: left;
+				width: 83px;
+				height: 42px;
+				line-height: 42px;
+				text-align: center;
+			}
+			.cloud{
+				display: block;
+				width: 83px;
+				height: 42px;
+				background: url(img/cloud.gif) no-repeat;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="box">
+			<span class="cloud" id="cloud"></span>
+			<ul id="ul">
+				<li>第一个蓝</li>
+				<li>第一个蓝</li>
+				<li>第一个蓝</li>
+				<li>第一个蓝</li>
+				<li>第一个蓝</li>
+				<li>第一个蓝</li>
+				<li>第一个蓝</li>
+				<li>第一个蓝</li>
+				
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var cloud=document.getElementById("cloud");
+		var ul=document.getElementById("ul");
+		var lis=ul.children;
+		var leader=0,target=0;
+		var current=0;
+		
+		for(var i=0;i<lis.length;i++){
+			lis[i].index=i;
+			lis[i].onmouseover=function(){
+				target=this.offsetLeft;
+			}
+			lis[i].onmouseout=function(){
+				target=current;
+			}
+			lis[i].onclick=function(){
+				current=this.offsetLeft;
+			}
+			setInterval(function(){
+				leader=leader+(target-leader)/10;
+				cloud.style.left=leader+"px";
+			},10);
+			
+		}
+	</script>
+</html>

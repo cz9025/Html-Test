@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[1,2,3,4,5];
+			arr.push(7); //从后面插入
+			console.log("数组长度为："+arr.push(8));//返回数组长度
+			
+			arr.unshift(666);//从前面插入
+			
+			console.log(arr);
+			
+//			删除
+			arr.pop(); //删除最后一个
+			console.log(arr);
+			console.log("返回删除的一个"+arr.pop());
+			console.log(arr);
+			
+			arr.shift();//删除第一个
+			console.log(arr);
+			
+//			连接两个数组
+			var a=[1,2,3];
+			var b=[4,5,6];
+			var c= a.concat(b);
+			console.log(c);
+			
+			var ss=arr.join("cz"); //数组转换为字符串
+			console.log(ss);
+			
+			var str="qwe,erew,trtr,tr";
+			console.log(str.split(","));//切片
+	</script>
+	</body>
+</html>

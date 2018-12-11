@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/fun.js"></script>
+		<title>返回顶部</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				height: 3000px;
+			}
+			#huo{
+				position: fixed;
+				bottom: 100px;
+				right: 50px;
+				display: none;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="huo">
+			<img src="img/Top.jpg"/>
+		</div>
+		
+		<script type="text/javascript">
+			
+			var huo=document.getElementById("huo");
+			function dis(obj){return obj.style.display="block";}
+			function no(obj){return obj.style.display="none";}
+			
+			var leader=0,target=0;
+			var timer=null;
+			window.onscroll=function(){
+				//如果页面有向下滚动,就显示出火箭
+				scroll().top>0?dis(huo):no(huo);
+				leader=scroll().top;
+			}
+			huo.onclick=function(){
+				target=0;
+				timer=setInterval(function(){
+					leader=leader+(target-leader)/10;
+					window.scrollTo(0,leader);
+					if(leader==target){
+						clearInterval(timer);
+					}
+				},30);
+			}
+		</script>
+	</body>
+</html>

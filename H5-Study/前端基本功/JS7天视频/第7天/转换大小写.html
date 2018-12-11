@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span id="sp1">
+			asdfDFghjk
+		</span><br />
+		<span id="sp2">
+			hgfFJhg
+		</span><br />
+		<button type="button" id="btn">转换大小</button>
+		
+		<script type="text/javascript">
+			var sp1=document.getElementById("sp1");
+			var sp2=document.getElementById("sp2");
+			var btn=document.getElementById("btn");
+			
+			btn.onclick=function(){
+				sp1.innerHTML=sp1.innerHTML.toUpperCase();
+				
+				sp2.innerHTML=sp2.innerHTML.toLowerCase();
+			}
+		</script>
+	</body>
+</html>

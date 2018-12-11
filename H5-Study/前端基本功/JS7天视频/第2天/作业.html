@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>1.编写一个程序，计算增加后的工资。要求工龄满5，增加20%工资；若2—4，则增加15%；若小于2，则增加10%工资。</p>
+		<input type="text" name="salar" id="salar" placeholder="输入工资" />
+		<br />
+		<input type="text" name="age" id="age" placeholder="输入工龄" />
+		<br />
+		<button id="btn">计算</button> 
+		<br />
+		<p>实际工资为:<span id="money"></span></p>
+		
+		<script type="text/javascript">
+			function $(id){return document.getElementById(id);}
+			$("btn").onclick=function(){
+				
+				if($("salar").value==0){
+					$("salar").style.borderColor="red";
+				}else if($("age").value<0){
+					$("age").style.borderColor="red";
+				}else if($("age").value>=5){
+					$("money").innerHTML=1.2*$("salar").value;
+				}else if($("age").value>=2&&$("age").value<=4){
+					$("money").innerHTML=1.15*$("salar").value;
+				}else if($("age").value<2){
+					$("money").innerHTML=1.1*$("salar").value;
+				}
+			}
+		</script>
+		
+		
+		
+		
+		<p>2. 编写一个程序，用户输入一个数，可以求出这个数的阶乘。</p>
+		
+		<br />
+		<input type="text" name="num" id="num"  /> <button  id="sums">计算</button> <span id="result"></span>
+		<script type="text/javascript">
+			function $(id){return document.getElementById(id);}
+			$("sums").onclick=function(){
+				var num=$("num").value;
+				var sum=1;
+				for(var i=1;i<=num;i++){
+					sum*=i;
+				}
+				$("result").innerHTML="阶乘结果为:"+sum;
+			
+			}
+		</script>
+		
+	</body>
+</html>

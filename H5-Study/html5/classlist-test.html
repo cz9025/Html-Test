@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>classlist</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+		<script type="text/javascript" src="jquery.js"></script>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			html,
+			body {
+				height: 100%;
+				width: 100%;
+			}
+			
+			aside {
+				float: left;
+				width: 220px;
+				height: 100%;
+				background-color: #CCCCCC;
+			}
+			
+			aside ul {
+				list-style: none;
+			}
+			
+			aside ul li {
+				line-height: 50px;
+				height: 50px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			aside ul li:hover {
+				background: gray;
+			}
+			
+			article {
+				height: 100%;
+				margin-left: 220px;
+				background-color: #004444;
+			}
+			
+			.cont {
+				height: 100%;
+			}
+			
+			.cont div {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<aside>
+			<!--<ul>
+				<li><a href="#wu">黑色的</a></li>
+				<li><a href="#liu">绿色的</a></li>
+				<li><a href="#qi">蓝色的</a></li>
+				
+			</ul>-->
+			<ul>
+				<li>黑色的</li>
+				<li>绿色的</li>
+				<li>蓝色的</li>
+
+			</ul>
+		</aside>
+		<article>
+			<div class="cont">
+				<div class="a b c" data-title='lvse' style="background: #e5e5e5;">
+					1
+				</div>
+				<div id="liu" style="background: #00FF00; display: none;">
+					2
+				</div>
+				<div id="qi" style="background: #0000FF; display: none;">
+					3
+				</div>
+			</div>
+			<!--<div class="container">
+			<input type="text" name="ids" id="ids" placeholder="please input text" />
+			
+		</div>-->
+		</article>
+
+		<script type="text/javascript">
+			$(function() {
+				$('li').on('click', function() {
+					
+					$('.cont').children().eq($(this).index()).css('display', 'block').siblings().css('display','none');
+				});
+				var test = $('.cont').children().eq(0).attr('class');
+				console.log(test);
+			});
+		</script>
+	</body>
+
+</html>

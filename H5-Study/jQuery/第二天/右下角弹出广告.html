@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<title>右下角弹出广告</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				vertical-align: middle;
+			}
+			.box{
+				width: 230px;
+				height: 120px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				display: none;
+				/*background:url(img/ad.jpg) no-repeat;*/
+			}
+			.clos{
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/ad.jpg"/>
+			<img src="img/h.jpg" class="clos"/>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$(".box").slideDown("slow");
+			$(".clos").click(function(){
+				
+//				$(".box").animate({
+//					"height":0
+//				},500)
+				
+				$(".box").slideUp("slow");
+				$(".box").slideDown("slow");
+				$(".box").slideUp("slow");
+			})
+		})
+	</script>
+</html>

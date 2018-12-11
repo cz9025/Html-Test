@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>66</title>
+		<style type="text/css">
+			.clearfix:before,
+			.clearfix:after {
+				content: "";
+				display: table;
+			}
+			
+			.clearfix:after {
+				clear: both;
+			}
+			
+			.father {
+				width: 600px;
+				background-color: pink;
+			}
+			
+			.da,
+			.xiao {
+				float: left;
+				width: 300px;
+				height: 200px;
+				background-color: skyblue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input placeholder="placeholder" type="text" />
+		<div class="father  clearfix">
+			<div class="da">
+
+			</div>
+			<div class="xiao"></div>
+		</div>
+	</body>
+
+</html>

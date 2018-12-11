@@ -1,0 +1,39 @@
+body,
+ul,
+li {
+	margin: 0;
+	padding: 0
+}
+
+ul {
+	list-style: none
+}
+
+.origina_column_warp .cell ul {
+	margin-top: 5px
+}
+
+.origina_column_warp .cell ul li {
+	font-family: "\5b8b\4f53", Arial, sans-serif;
+	position: relative;
+	padding-left: 10px;
+	line-height: 23px;
+	height: 23px;
+	overflow: hidden
+}
+
+.origina_column_warp .cell ul li:after {
+	content: "";
+	background: #888;
+	width: 2px;
+	height: 2px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -2px
+}
+
+.origina_column_warp .cell ul li:hover:after {
+	background: #F34540
+}

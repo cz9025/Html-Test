@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>排他思想</title>
+		<style type="text/css">
+			button{
+				height: 60px;
+				width: 80px;
+			}
+			.bgcolor{
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<button >第一个</button>
+			<button >第2个</button>
+			<button >第3个</button>
+			<button >第4个</button>
+			<button >第5个</button>
+			<button >第6个</button>
+		</div>
+		<!--拍他思想就是，先把所有的都清除，然后再给自己赋予该有的-->
+		<script type="text/javascript">
+			function $(id){return document.getElementById(id);}
+			var btn=$("box").getElementsByTagName("button");
+			for(var i=0; i<btn.length;i++){
+				btn[i].onclick=function(){
+					for(var j=0; j<btn.length;j++){
+						btn[j].className="";
+					}
+					this.className="bgcolor";
+				}
+			}
+		</script>
+	</body>
+</html>

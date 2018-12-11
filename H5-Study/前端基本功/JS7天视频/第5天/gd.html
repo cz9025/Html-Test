@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播图</title>
+		<style type="text/css">
+			#slider{
+				height: 454px;
+				width: 735px;
+				position: relative;
+			}
+			#scorll{
+				height: 454px;
+				width: 735px;
+				overflow: hidden;
+			}
+			#scorll ul{
+				list-style: none;
+				
+			}
+			.circle{
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				
+			}
+			.circle span{
+				display: inline-block;
+				width: 18px;
+				height: 18px;
+				border-radius: 50%;
+				background-color: pink;
+				margin-left: 10px;
+				text-align: center;
+				cursor: pointer;
+			}
+			.circle span:hover{
+				background-color: skyblue;
+			}
+			.circle .current{
+				background-color: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="slider">
+			<div id="scorll">
+				<ul id="ul_pic">
+					<li><img src="../../CSS实战/img/slider1.jpg" /></li>
+					<li><img src="../../CSS实战/img/slider2.jpg" /></li>
+					<li><img src="../../CSS实战/img/slider3.jpg" /></li>
+					<li><img src="../../CSS实战/img/slider4.jpg" /></li>
+					<li><img src="../../CSS实战/img/slider5.jpg" /></li>
+				</ul>
+			</div>
+			<!--<div class="circle">
+				<span>1</span>
+				<span>2</span>
+				<span>3</span>
+				<span>4</span>
+				<span>5</span>
+			</div>-->
+		</div>
+		<script type="text/javascript">
+			function $(id){return document.getElementById(id);}
+			
+			var circle=document.createElement("div");
+			circle.setAttribute("class","circle");
+			$("slider").appendChild(circle);
+			
+			var lis=$("ul_pic").children;
+			for(var i=0; i<lis.length;i++){
+				var sp=document.createElement("span");
+				sp.innerHTML=i+1;
+				circle.appendChild(sp);
+				
+			}
+			circle.children[0].className="current";
+			for(var i=0; i<lis.length;i++){
+				circle.children[i].index=i;
+				circle.children[i].onmouseover=function(){
+					//使用排他思想，先清除所有的，然后再给自己赋予
+					for(var j=0; j<lis.length;j++){
+						$("ul_pic").children[j].style.display="none";
+						circle.children[j].className="";
+					}
+					$("ul_pic").children[this.index].style.display="block";
+					circle.children[this.index].className="current";
+				}
+			}
+
+		</script>
+		
+	</body>
+</html>

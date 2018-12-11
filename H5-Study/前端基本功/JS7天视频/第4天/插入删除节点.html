@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>插入删除节点</title>
+		<style type="text/css">
+			#demo{
+				width:300px;
+				height: 200px;
+				border: 1px solid gray;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="demo">
+			<div id="da">
+				<span></span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var demo=document.getElementById("demo");
+			var child=demo.children;
+			var divs=document.createElement("div");
+			demo.appendChild(divs);//在后面添加
+			
+			var divs2=document.createElement("div");
+			demo.insertBefore(divs2,child[0]);//在指定元素的前面 添加
+			
+			//删除
+			var da=document.getElementById("da");
+//			demo.removeChild(da);
+			
+			//克隆
+			var last=da.cloneNode(true);//加true是深度克隆，不加只是克隆自己
+//			var last=child[0].cloneNode();
+			demo.appendChild(last);
+			
+		</script>
+	</body>
+</html>

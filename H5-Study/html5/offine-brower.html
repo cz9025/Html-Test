@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>离线访问</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<script type="text/javascript" src="jquery.js"></script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!--有个表单在，回重新刷新页面-->
+		<!--<form method="get">-->
+			<!--默认的样式丑，可以自己定义一个，点击自己定义的，让这个产生事件filetest.click()-->
+			<input multiple="multiple" type="file" name="file_test" id="filetest" value="" />
+			
+			<input class="btn btn-success" type="submit" id="sub" value="tijiao"/>
+		<!--</form>-->
+		<div id="txt">
+			
+		</div>
+		<script type="text/javascript">
+			var txt=document.getElementById("txt");
+				var inputfile=document.getElementById("filetest");
+				var sub = document.getElementById("sub");
+				sub.onclick=function(){
+					console.log(666);
+				txt.innerHTML=66666;
+
+				var files=inputfile.files;
+					for (var i=0;i<files.length;i++) {
+						console.log(files[i].name+"="+files[i].size);
+//						console.log(1);
+					}
+				}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				font-size: 16px;
+				font-family: "微软雅黑";
+			}
+			
+			.box {
+				margin: 100px auto;
+				width: 291px;
+				height: 291px;
+				border: 1px solid black;
+			}
+			
+			.nine {
+				float: left;
+				width: 96px;
+				/*overflow: hidden;*/
+				height: 96px;
+				border: 1px solid black;
+				border-right: none;
+				/*border-left: none;*/
+			}
+			
+			.snine {
+				float: left;
+				width: 31px;
+				margin: -1px 0 0 -1px;
+				height: 31px;
+				border: 1px solid black;
+				line-height: 31px;
+				cursor: pointer;
+			}
+			
+			.text:hover {
+				background-color: pink;
+			}
+			
+			.text {
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				border: none;
+				text-align: center;
+				size: 1;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button type="button" id="btn">提交</button>
+		<div class="box">
+			<div class="nine box1" id="row11">
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+
+			</div>
+
+			<div class="nine box2" id="row12">
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+			</div>
+			
+			<div class="nine box3" id="row13">
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+			</div>
+			
+			
+			<div class="nine box4" id="row21">
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+			</div>
+			
+			<div class="nine box5" id="row22">
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+			</div>
+			
+			<div class="nine box6" id="row23">
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+			</div>
+			
+			<div class="nine box7" id="row31">
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+			</div>
+			
+			<div class="nine box8" id="row32">
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+			</div>
+			
+			<div class="nine box9" id="row33">
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+				<div class="snine"><input type="text" class="text" maxlength="1" /></div>
+			</div>
+		</div>
+
+	</body>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				//每一个大格子
+				var arr1 = arr2 = arr3 = arr4 = arr5 = arr6 = arr7 = arr8 = arr9 = " ";
+
+				//每一行的
+				var str1 = str2 = str3 = str4 = str5 = str6 = str7 = str8 = str9 = " ";
+
+				//每一列的
+				var stc1 = stc2 = stc3 = stc4 = stc5 = stc6 = stc7 = stc8 = stc9 = " ";
+
+				$("#btn").click(function() {
+
+					arr1 = arr2 = arr3 = arr4 = arr5 = arr6 = arr7 = arr8 = arr9 = " ";
+					str1 = str2 = str3 = str4 = str5 = str6 = str7 = str8 = str9 = " ";
+					stc1 = stc2 = stc3 = stc4 = stc5 = stc6 = stc7 = stc8 = stc9 = " ";
+
+					for(var i = 0; i < 9; i++) {
+						arr1 += $("#row11 input").eq(i).val();
+						arr2 += $("#row12 input").eq(i).val();
+						arr3 += $("#row13 input").eq(i).val();
+
+						arr4 += $("#row21 input").eq(i).val();
+						arr5 += $("#row22 input").eq(i).val();
+						arr6 += $("#row23 input").eq(i).val();
+
+						arr7 += $("#row31 input").eq(i).val();
+						arr8 += $("#row32 input").eq(i).val();
+						arr9 += $("#row33 input").eq(i).val();
+
+					}
+					//第一行的
+					str1 = $("#row11 input").eq(0).val() + $("#row11 input").eq(1).val() + $("#row11 input").eq(2).val() + $("#row12 input").eq(0).val() + $("#row12 input").eq(1).val() + $("#row12 input").eq(2).val() + $("#row13 input").eq(0).val() + $("#row13 input").eq(1).val() + $("#row13 input").eq(2).val();
+					//第二行的
+					str2 = $("#row11 input").eq(3).val() + $("#row11 input").eq(4).val() + $("#row11 input").eq(5).val() + $("#row12 input").eq(3).val() + $("#row12 input").eq(4).val() + $("#row12 input").eq(5).val() + $("#row13 input").eq(3).val() + $("#row13 input").eq(4).val() + $("#row13 input").eq(5).val();
+					//第三行
+					str3 = $("#row11 input").eq(6).val() + $("#row11 input").eq(7).val() + $("#row11 input").eq(8).val() + $("#row12 input").eq(6).val() + $("#row12 input").eq(7).val() + $("#row12 input").eq(8).val() + $("#row13 input").eq(6).val() + $("#row13 input").eq(7).val() + $("#row13 input").eq(8).val();
+
+					//第4行的
+					str4 = $("#row21 input").eq(0).val() + $("#row21 input").eq(1).val() + $("#row21 input").eq(2).val() + $("#row22 input").eq(0).val() + $("#row22 input").eq(1).val() + $("#row22 input").eq(2).val() + $("#row23 input").eq(0).val() + $("#row23 input").eq(1).val() + $("#row23 input").eq(2).val();
+					//第5行的
+					str5 = $("#row21 input").eq(3).val() + $("#row21 input").eq(4).val() + $("#row21 input").eq(5).val() + $("#row22 input").eq(3).val() + $("#row22 input").eq(4).val() + $("#row22 input").eq(5).val() + $("#row23 input").eq(3).val() + $("#row23 input").eq(4).val() + $("#row23 input").eq(5).val();
+					//第6行
+					str6 = $("#row21 input").eq(6).val() + $("#row21 input").eq(7).val() + $("#row21 input").eq(8).val() + $("#row22 input").eq(6).val() + $("#row22 input").eq(7).val() + $("#row22 input").eq(8).val() + $("#row23 input").eq(6).val() + $("#row23 input").eq(7).val() + $("#row23 input").eq(8).val();
+
+					//第7行的
+					str7 = $("#row31 input").eq(0).val() + $("#row31 input").eq(1).val() + $("#row31 input").eq(2).val() + $("#row32 input").eq(0).val() + $("#row32 input").eq(1).val() + $("#row32 input").eq(2).val() + $("#row33 input").eq(0).val() + $("#row33 input").eq(1).val() + $("#row33 input").eq(2).val();
+					//第8行的
+					str8 = $("#row31 input").eq(3).val() + $("#row31 input").eq(4).val() + $("#row31 input").eq(5).val() + $("#row32 input").eq(3).val() + $("#row32 input").eq(4).val() + $("#row32 input").eq(5).val() + $("#row33 input").eq(3).val() + $("#row33 input").eq(4).val() + $("#row33 input").eq(5).val();
+					//第9行
+					str9 = $("#row31 input").eq(6).val() + $("#row31 input").eq(7).val() + $("#row31 input").eq(8).val() + $("#row32 input").eq(6).val() + $("#row32 input").eq(7).val() + $("#row32 input").eq(8).val() + $("#row33 input").eq(6).val() + $("#row33 input").eq(7).val() + $("#row33 input").eq(8).val();
+
+					//每列
+					stc1 = $("#row11 input").eq(0).val() + $("#row11 input").eq(3).val() + $("#row11 input").eq(6).val() + $("#row21 input").eq(0).val() + $("#row21 input").eq(3).val() + $("#row21 input").eq(6).val() + $("#row31 input").eq(0).val() + $("#row31 input").eq(3).val() + $("#row31 input").eq(6).val();
+					stc2 = $("#row11 input").eq(1).val() + $("#row11 input").eq(4).val() + $("#row11 input").eq(7).val() + $("#row21 input").eq(1).val() + $("#row21 input").eq(4).val() + $("#row21 input").eq(7).val() + $("#row31 input").eq(1).val() + $("#row31 input").eq(4).val() + $("#row31 input").eq(7).val();
+					stc3 = $("#row11 input").eq(2).val() + $("#row11 input").eq(5).val() + $("#row11 input").eq(8).val() + $("#row21 input").eq(2).val() + $("#row21 input").eq(5).val() + $("#row21 input").eq(8).val() + $("#row31 input").eq(2).val() + $("#row31 input").eq(5).val() + $("#row31 input").eq(8).val();
+
+					stc4 = $("#row12 input").eq(0).val() + $("#row12 input").eq(3).val() + $("#row12 input").eq(6).val() + $("#row22 input").eq(0).val() + $("#row22 input").eq(3).val() + $("#row22 input").eq(6).val() + $("#row32 input").eq(0).val() + $("#row32 input").eq(3).val() + $("#row32 input").eq(6).val();
+					stc5 = $("#row12 input").eq(1).val() + $("#row12 input").eq(4).val() + $("#row12 input").eq(7).val() + $("#row22 input").eq(1).val() + $("#row22 input").eq(4).val() + $("#row22 input").eq(7).val() + $("#row32 input").eq(0).val() + $("#row32 input").eq(4).val() + $("#row32 input").eq(7).val();
+					stc6 = $("#row12 input").eq(2).val() + $("#row12 input").eq(5).val() + $("#row12 input").eq(8).val() + $("#row22 input").eq(2).val() + $("#row22 input").eq(5).val() + $("#row22 input").eq(8).val() + $("#row32 input").eq(0).val() + $("#row32 input").eq(5).val() + $("#row32 input").eq(8).val();
+
+					stc7 = $("#row13 input").eq(0).val() + $("#row13 input").eq(3).val() + $("#row13 input").eq(6).val() + $("#row23 input").eq(0).val() + $("#row23 input").eq(3).val() + $("#row23 input").eq(6).val() + $("#row33 input").eq(0).val() + $("#row33 input").eq(3).val() + $("#row33 input").eq(6).val();
+					stc8 = $("#row13 input").eq(1).val() + $("#row13 input").eq(4).val() + $("#row13 input").eq(7).val() + $("#row23 input").eq(1).val() + $("#row23 input").eq(4).val() + $("#row23 input").eq(7).val() + $("#row33 input").eq(0).val() + $("#row33 input").eq(4).val() + $("#row33 input").eq(7).val();
+					stc9 = $("#row13 input").eq(2).val() + $("#row13 input").eq(5).val() + $("#row13 input").eq(8).val() + $("#row23 input").eq(2).val() + $("#row23 input").eq(5).val() + $("#row23 input").eq(8).val() + $("#row33 input").eq(0).val() + $("#row33 input").eq(5).val() + $("#row33 input").eq(8).val();
+
+					console.log(arr1);
+					console.log(str1);
+					console.log(stc1);
+					
+					
+					for(var j = 1; j < 10; j++) {
+					
+						if((arr1.indexOf(j) == -1) ||(arr2.indexOf(j) == -1) ||(arr3.indexOf(j) == -1) ||(arr4.indexOf(j) == -1) ||(arr5.indexOf(j) == -1) ||(arr6.indexOf(j) == -1) ||(arr7.indexOf(j) == -1) ||(arr8.indexOf(j) == -1) ||(arr9.indexOf(j) == -1) || (str1.indexOf(j) == -1) ||(str2.indexOf(j) == -1) ||(str3.indexOf(j) == -1) ||(str4.indexOf(j) == -1) ||(str5.indexOf(j) == -1) ||(str6.indexOf(j) == -1) ||(str7.indexOf(j) == -1) ||(str8.indexOf(j) == -1) ||(str9.indexOf(j) == -1) || (stc1.indexOf(j) == -1)||(stc2.indexOf(j) == -1)||(stc3.indexOf(j) == -1)||(stc4.indexOf(j) == -1)||(stc5.indexOf(j) == -1)||(stc6.indexOf(j) == -1)||(stc7.indexOf(j) == -1)||(stc8.indexOf(j) == -1)||(stc9.indexOf(j) == -1)) {
+								
+							alert("所提交的答案有误！检查后再提交")
+							return -1;
+						}
+					}
+
+					
+					//通过上面的校验的话证明是对的
+					alert("提交正确！");
+
+				});
+
+			});
+		</script>
+</html>

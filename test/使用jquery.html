@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				margin-top: 30px;
+				width: 1000px;
+				margin-left: auto;
+				margin-right: auto;
+				
+			}
+			.title{
+				list-style: none;
+				height: 42px;
+				background: #00BFFF;
+				overflow: hidden;
+			}
+			.title li{
+				width: 80px;
+				height: 40px;
+				line-height: 40px;
+				float: left;
+				margin-left: 15px;
+				text-align: center;
+				background: #1A66B3;
+			}
+			.content{
+				height: 300px;
+				overflow: hidden;
+				/*margin-top: 2px;*/
+			}
+			.active{
+				border-bottom: 2px solid black;
+			}
+			.one{
+				height: 300px;
+				background: #00B0E7;
+			}
+			.two{
+				background: blue;height: 300px;
+			}
+			.three{
+				background: green;height: 300px;
+			}
+			.four{
+				background: yellow;height: 300px;
+			}
+			.wjx{
+				list-style: none;
+			}
+			.wjx li{
+				float: left;
+				width: 40px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				margin-left: 2px;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul class="title">
+				<li class="active">四个标签</li>
+				<li>四个标签</li>
+				<li>四个标签</li>
+				<li>四个标签</li>
+			</ul>
+			
+			<div class="content">
+				<div class="one"></div>
+				<div class="two"></div>
+				<div class="three"></div>
+				<div class="four"></div>
+			</div>
+			<button class="btn">6666666666</button>
+			<button class="btn1">6666666666</button>
+			<div class="zai"></div>
+			<ul class="wjx">
+				<li>☆</li>
+				<li>☆</li>
+				<li>☆</li>
+				<li>☆</li>
+				<li>☆</li>
+			</ul>
+		</div>
+		<input type="button" class="notz" value="禁止提哦啊转身的方式答复" id="startDate" readonly="readonly"/>
+		
+		<select  id="auditStatus">
+							<option value="">请选择...</option>
+							<option value="3">通过</option>
+							<option value="2">不通过</option>
+							<option value="1">待审核</option>
+					</select>
+		<script type="text/javascript">
+			$(function(){
+				$("#startDate").removeAttr('readonly');
+				$("#startDate").focus();
+				$("#auditStatus option:eq(1)").attr("selected",true);
+				$('.title>li').mouseenter(function(){
+					$(this).addClass('active').siblings('li').removeClass('active');
+					
+					
+					$('.content>div').eq($(this).index()).css('display','block').siblings('div').css('display','none');
+				});
+				
+				$('.btn').attr('title','666666666666');
+				
+//				$('.btn').click(function(){
+//				console.log($(this).attr('title'));
+//				});
+				$('.btn').on('click',function(){
+				
+					console.log($(this).attr('title'));
+					console.log(77);
+					$('.zai').append('<p>活该啊</p>');
+					
+				});
+				
+				$('.btn1').on('click',function(){
+					
+					$('.zai').remove();
+				});
+				
+				
+				$('.notz').attr('disabled',true);
+				
+				
+				var notx='☆';
+				var selx='★';
+				$('.wjx li').mouseenter(function(){
+					$(this).text(selx).prevAll().text(selx).end().nextAll().text(notx);
+				})
+				.mouseleave(function(){
+					$(this).text(notx).prevAll().text(notx).end().nextAll().text(notx);
+					$('.act').text(selx).prevAll().text(selx).end().nextAll().text(notx);
+				});
+				$('.wjx li').click(function(){
+					$(this).addClass('act').siblings().removeClass('act');
+				})
+			});
+		</script>
+	</body>
+</html>

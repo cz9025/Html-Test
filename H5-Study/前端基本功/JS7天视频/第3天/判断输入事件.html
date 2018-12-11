@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>判断输入事件oninput</title>
+	</head>
+	<body>
+		<input type="text" name="txt" id="txt" placeholder="please input name" />
+		
+		<script type="text/javascript">
+			var txt=document.getElementById("txt");
+			txt.oninput=function(){
+				if(isNaN(txt.value)){
+					txt.value="";
+//					var lens=txt.value.length;
+				}
+			}
+		</script>
+	</body>
+</html>

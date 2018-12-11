@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<select name="city">
+			<option value="0">111111111</option>
+			<option value="0">111111111</option>
+			<option value="0">111111111</option>
+			<option value="0">111111111</option>
+		</select>
+		<p id="txt"></p>
+		<!--<input type="button" name="btn" id="btn" value="得到返回值" />-->
+		<script type="text/javascript">
+//			document.querySelector("#btn").onclick=function(){
+//				
+//			}
+			
+			//1创建对象
+			var ajaxhttp= new XMLHttpRequest();
+
+			//2设置请求方法
+			ajaxhttp.open("get", "test.php", true);
+
+			//3发送请求
+			ajaxhttp.send();
+
+			//4注册事件,,,需要判断请求的状态,,然后获取返回的数据
+			ajaxhttp.onreadystatechange = function() {
+				if(ajaxhttp.readyState == 4 && ajaxhttp.status == 200) {
+					console.log(ajaxhttp.responseText);
+					document.querySelector("#txt").innerHTML = JSON.parse(ajaxhttp.responseText).a ;
+				}
+
+			}
+		</script>
+	</body>
+
+</html>

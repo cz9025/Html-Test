@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function outfun(){
+				var num=10;
+				function infun(){
+					console.log(num);
+				}
+				return infun;
+			}
+			var fun=outfun();
+			fun();
+		</script>
+	</body>
+</html>

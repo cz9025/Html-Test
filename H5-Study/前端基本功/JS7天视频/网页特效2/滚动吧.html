@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>滚动吧</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				height: 3000px;
+			}
+			
+			.ad {
+				width: 100px;
+				height: 300px;
+				background-color: pink;
+				position: absolute;
+				top: 100px;
+				left: 50px;
+			}
+			
+			.hj {
+				width: 36px;
+				height: 64px;
+				position: fixed;
+				bottom: 50px;
+				right: 50px;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="ad" id="ad"></div>
+
+		<div class="hj" id="hj">
+			<img src="img/Top.jpg" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		var ad = document.getElementById("ad");
+		var hj = document.getElementById("hj");
+
+		var leader = 0,target = 0;
+		var timer = null,ts = null;
+
+		var l = 0,t = 0;
+		var tops = ad.offsetTop;
+		window.onscroll = function() {
+			console.log(1);
+			//在这里关闭不行,会导致点击火箭时不停的开和关
+//			clearInterval(ts);
+			
+			if(scroll().top > 0) {
+				hj.style.display = "block";
+			} else {
+				hj.style.display = "none";
+			}
+			//ad
+			t = scroll().top + tops;
+			
+			animate(ad,t);
+//			ts = setInterval(function() {
+//				
+//				l = l + (t - l) / 10;
+//				ad.style.top = l + "px";
+//				console.log(t+" "+ l);
+//				//为什么不会关闭定时器
+//			}, 30);
+
+			leader = scroll().top;
+
+		}
+		hj.onclick = function() {
+			timer = setInterval(function() {
+				leader = leader + (target - leader) / 10;
+				window.scrollTo(0, leader);
+				if(leader == target) {
+					clearInterval(timer);
+				}
+			}, 30);
+
+		}
+		
+		//获得页面滚动的距离
+		function scroll(){
+			if(window.pageYOffset !=null){
+				return{
+					left:window.pageXOffset,
+					top:window.pageYOffset
+				}
+			}else if(document.compatMode=="CSS1Compat"){
+				return{
+					left:document.documentElement.scrollLeft,
+					top:document.documentElement.scrollTop
+				}
+			}
+			return{
+				left:document.body.scrollLeft,
+				top:document.body.scrollTop
+			}
+		}
+		function animate(obj,target){
+				
+				clearInterval(obj.timer);
+				
+				obj.timer=setInterval(function(){
+					//数字越小,越细腻
+					var step=(target-obj.offsetTop)/10; 
+					step=step>0?Math.ceil(step):Math.floor(step);
+					obj.style.top=obj.offsetTop+step+"px";
+					if(step==0){
+						clearInterval(obj.timer);
+					}
+				},30)
+			}
+	</script>
+
+</html>

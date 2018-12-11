@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>wu bu xihuan 01</li>
+			<li>wu bu xihuan 02</li>
+			<li>wu bu xihuan 03</li>
+			<li>wu bu xihuan 04</li>
+			<li>wu bu xihuan 05</li>
+			<li>wu bu xihuan 06</li>
+			<li>wu bu xihuan 07</li>
+			<li>wu bu xihuan 08</li>
+			<li>wu bu xihuan 09</li>
+			<li>wu bu xihuan 10</li>
+		</ul>
+		
+		<br />
+		<form action="#" >
+			<input type="text" name="login" id="login" placeholder="qwetuio" />
+			<input type="submit" value="提交" id="su"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+//			$("li").bind("click",function(){
+//				console.log($(this).index());
+//			})
+//			$("ul").bind("click","li",function(){
+//				console.log($(this).index());
+//			})
+			$("ul").on("click","li",function(){
+				console.log($(this).index());
+				
+			})
+			//解绑
+			//$("ul").off("click");
+			
+			
+			
+			
+			
+			
+			$("#su").click(function(){
+				var txt=$("#login").val();
+				if(txt=="123"){
+					console.log(txt);
+				}else{
+					$("#login").val("").focus();
+				}
+			})
+		});
+	</script>
+</html>

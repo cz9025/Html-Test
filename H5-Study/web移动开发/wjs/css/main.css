@@ -1,0 +1,192 @@
+.topbar{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+a{
+	color: #888;
+	text-decoration: none;
+}
+a:hover,a:visited,a:link{
+	color: #888;
+	text-decoration: none;
+}
+
+/* 超小屏幕（手机，小于 768px） */
+
+.container {
+	width: 100%;
+}
+/*导航条样式*/
+.navbar-itcast {
+  background-color: #fff;
+  border-color: #f5f5f5;
+}
+
+.navbar-itcast .navbar-brand {
+  color: #777;
+  height: 80px;
+}
+
+.navbar-itcast .navbar-brand:hover,
+.navbar-itcast .navbar-brand:focus {
+  color: #5e5e5e;
+}
+
+.navbar-itcast .navbar-text {
+  color: #777;
+}
+
+.navbar-itcast .navbar-nav > li > a {
+  color: #777;
+  line-height: 48px;
+  font-size: 14px;
+}
+
+.navbar-itcast .navbar-nav > li > a:hover,
+.navbar-itcast .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+  border-bottom: 2px solid #e92322;
+}
+
+/*选中状态*/
+.navbar-itcast .navbar-nav > .active > a,
+.navbar-itcast .navbar-nav > .active > a:hover,
+.navbar-itcast .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: transparent;
+  border-bottom: 2px solid #E92322;
+}
+
+.navbar-itcast .navbar-nav > .disabled > a,
+.navbar-itcast .navbar-nav > .disabled > a:hover,
+.navbar-itcast .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+
+/*汉堡菜单*/
+.navbar-itcast .navbar-toggle {
+  border-color: #ddd;
+  margin-top: 23px;
+  margin-bottom: 23px;
+}
+
+.navbar-itcast .navbar-toggle:hover,
+.navbar-itcast .navbar-toggle:focus {
+  background-color: #ddd;
+}
+
+.navbar-itcast .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+
+.navbar-itcast .navbar-collapse,
+.navbar-itcast .navbar-form {
+  border-color: #e7e7e7;
+}
+
+.navbar-itcast .navbar-nav > .open > a,
+.navbar-itcast .navbar-nav > .open > a:hover,
+.navbar-itcast .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+
+
+.icon-logo::before {
+  content: "\e93e";
+}
+
+.icon-icon::before {
+  content: "\e920";
+}
+
+.header .icon-icon {
+  font-size: 50px;
+  color: #E92322;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+.header .icon-logo {
+  font-size: 32px;
+  color: #333;
+  line-height: 50px;
+  vertical-align: middle;
+}
+/*导航条样式结束*/
+
+/* 小屏幕（平板，大于等于 768px） */
+
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+		
+	}
+}
+
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+/*字体图标*/
+@font-face {
+	font-family:"cz";
+	src: url(../font/MiFie-Web-Font.eot) format('embedded-opentype'),url(../font/MiFie-Web-Font.svg) format('svg'),url(../font/MiFie-Web-Font.ttf) format('truetype'),url(../font/MiFie-Web-Font.woff) format('woff');
+}
+
+[class^="icon-"],[class*=' icon-']{
+	font-family: "cz";
+	font-style: normal;
+}
+.icon-mobilephone::before {
+  content: "\e908";
+  font-size: 13px;
+}
+
+.icon-telephone::before {
+  content: "\e909";
+  font-size: 15px;
+}
+/*字体图标结束*/
+/*手机微金所*/
+.mobile{
+	position: relative;
+}
+.mobile img{
+	display: none;
+	position: absolute;
+	top: 15px;
+	left: 0;
+	z-index: 9999;
+}
+
+.mobile:hover img{
+	display: block;
+}
+/*分割线*/
+.row>div+div{
+	border-left: 1px solid #C0C0C0;
+	height: 40px;
+	color: #888;
+}
+
+

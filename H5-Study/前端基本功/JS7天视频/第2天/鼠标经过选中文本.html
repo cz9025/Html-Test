@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标经过选中文本</title>
+	</head>
+	<body>
+		<input type="text"  id="txt" value="我是文本" />
+		<script type="text/javascript">
+			var txt=document.getElementById("txt");
+			txt.onmouseover=function(){
+				txt.select();
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自动关闭广告</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 500px;
+				height: 100px;
+				background-color: pink;
+				position: relative;
+				margin: 100px;
+			}
+			#close{
+				display: inline-block;
+				height: 20px;
+				width: 20px;
+				background-color: gray;
+				color: white;
+				line-height: 20px;
+				text-align: center;
+				cursor: pointer;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span id="txt">
+				5秒后自动关闭
+			</span>
+			<span id="close">X</span>
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var txt=document.getElementById("txt");
+			var close=document.getElementById("close");
+			close.onclick=function(){
+				box.style.display="none";
+			}
+			var count=5;
+			setTimeout(fn,1000);//如果不需要显示倒计时时间，那么把这个1000直接写为5000就好了
+			function fn(){
+				count--;
+				txt.innerHTML=count+"秒后自动关闭";
+				if(count<=0){
+					box.style.display="none";
+				}else{
+//					setTimeout(fn,1000);
+					setTimeout(arguments.callee,1000);//指向当前的函数
+				}
+			}
+		</script>
+	</body>
+</html>

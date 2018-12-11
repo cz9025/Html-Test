@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function person(name,age){
+				var obj={};
+				obj.name=name;
+				obj.age=age;
+				
+				obj.showname=function(){
+					alert("my name is "+name);
+				}
+				
+				obj.showage=function(){
+					alert(age);
+				}
+				
+				return obj;
+			}
+			
+			var ming=person("xiaoming",18);
+			
+			console.log(ming.name);
+			console.log(ming.age);
+			
+			ming.showname();
+			
+			ming.showage();
+		</script>
+	</body>
+</html>

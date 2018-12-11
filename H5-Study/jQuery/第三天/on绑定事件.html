@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			<h1>111111111111111111</h1>
+			<h1>222222222222222222</h1>
+			
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//box中绑定on的点击事件,让h1去触发
+			$(".box").on("click","h1",function(){
+				alert($(this).html());
+			})
+			
+			//解绑
+			$(".box").off("click");
+		})
+	</script>
+</html>
